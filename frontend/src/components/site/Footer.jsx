@@ -1,0 +1,55 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, Linkedin, Facebook, Instagram } from "lucide-react";
+import { FOOTER_ORG, INTERVENTIONS } from "../../data/site";
+import { Logo } from "./Logo";
+import { Reveal } from "./Motion";
+
+const Col = ({ title, items }) => (
+  <div>
+    <p className="eyebrow mb-5 text-bone/60">{title}</p>
+    <ul className="space-y-3">
+      {items.map(([l, h]) => <li key={h}><Link to={h} className="text-sm text-bone/85 transition-colors hover:text-lime">{l}</Link></li>)}
+    </ul>
+  </div>
+);
+
+export const Footer = () => (
+  <footer className="bg-ink text-bone" data-testid="site-footer">
+    <div className="container-lc flex flex-col gap-10 py-20 md:flex-row md:items-end md:justify-between md:py-28">
+      <Reveal>
+        <p className="eyebrow mb-5 text-lime">Be part of the change</p>
+        <h2 className="font-display max-w-3xl text-4xl leading-[1] tracking-tight md:text-7xl">Invest in a young person’s <em className="font-serif font-normal italic text-lime">future</em> today.</h2>
+      </Reveal>
+      <Reveal delay={0.1} className="flex flex-wrap gap-3">
+        <Link to="/get-involved" data-testid="footer-donate-btn" className="btn-lime group">Donate now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link>
+        <Link to="/contact" data-testid="footer-partner-btn" className="btn-ghost">Partner with us</Link>
+      </Reveal>
+    </div>
+    <div className="container-lc grid grid-cols-1 gap-12 border-t border-bone/15 py-16 sm:grid-cols-2 lg:grid-cols-12">
+      <div className="lg:col-span-4">
+        <Logo className="h-9" />
+        <p className="mt-5 max-w-xs text-sm text-bone/70">An innovative youth development organisation based in Cape Town, investing in young people so they can reach their potential.</p>
+        <div className="mt-6 flex gap-2">
+          {[Linkedin, Facebook, Instagram].map((I, k) => (
+            <a key={k} href="#" aria-label="social" className="flex h-10 w-10 items-center justify-center rounded-full border border-bone/20 transition-colors hover:bg-lime hover:text-ink"><I className="h-4 w-4" /></a>
+          ))}
+        </div>
+      </div>
+      <div className="lg:col-span-2"><Col title="Organisation" items={FOOTER_ORG} /></div>
+      <div className="lg:col-span-3"><Col title="Our Work" items={INTERVENTIONS.map((i) => [i.name, `/interventions/${i.slug}`])} /></div>
+      <div className="space-y-5 text-sm lg:col-span-3">
+        <p className="eyebrow text-bone/60">Visit / Contact</p>
+        <div><p className="text-xs uppercase tracking-widest text-lime">Visit</p><p className="mt-1 text-bone/85">314 Imam Haron Road, Lansdowne, Cape Town, South Africa</p></div>
+        <div><p className="text-xs uppercase tracking-widest text-lime">Email</p><a href="mailto:info@lifechoices.co.za" className="mt-1 block text-bone/85">info@lifechoices.co.za</a></div>
+        <div><p className="text-xs uppercase tracking-widest text-lime">Call</p><a href="tel:+27217614640" className="mt-1 block text-bone/85">+27 21 761 4640</a></div>
+      </div>
+    </div>
+    <div className="overflow-hidden border-t border-bone/15">
+      <p className="font-display select-none whitespace-nowrap text-center text-[19vw] leading-[0.8] tracking-[-0.05em] text-bone/[0.06]" aria-hidden="true">life choices</p>
+    </div>
+    <div className="container-lc flex flex-col justify-between gap-2 border-t border-bone/15 py-6 text-xs text-bone/60 md:flex-row">
+      <span>© 2026 Life Choices. Redesign prototype. Not the official website.</span>
+      <span>Registered NPO · PBO · Cape Town, South Africa</span>
+    </div>
+  </footer>
+);
