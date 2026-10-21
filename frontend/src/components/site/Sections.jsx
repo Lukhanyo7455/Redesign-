@@ -23,9 +23,9 @@ export const Stats = () => (
 
 export const Vision = () => (
   <section className="relative bg-transparent py-24 md:py-36" data-testid="vision-section">
-    <div className="container-lc grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20">
-      <Reveal className="lg:col-span-5"><Placeholder label="Young people at Life Choices" src="/hero/hero1.webp" className="aspect-[1280/792] w-full rounded-[28px]" /></Reveal>
-      <div className="lg:col-span-7">
+    <div className="container-lc grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
+      <Reveal className="lg:col-span-7"><Placeholder label="Young people at Life Choices" src="/hero/hero1.webp" className="aspect-[1280/792] w-full rounded-[28px]" /></Reveal>
+      <div className="lg:col-span-5">
         <Reveal><Eyebrow>Our Vision</Eyebrow></Reveal>
         <Reveal delay={0.06}><p className="text-lg text-ink/60">Life Choices is working towards a world where…</p></Reveal>
         <Reveal delay={0.12}>

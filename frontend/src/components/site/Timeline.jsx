@@ -1,5 +1,5 @@
 import { TIMELINE } from "../../data/site";
-import { Reveal, FitImage } from "./Motion";
+import { Reveal } from "./Motion";
 import { Eyebrow } from "./Sections";
 
 const Slide = ({ m, k }) => (
@@ -8,7 +8,7 @@ const Slide = ({ m, k }) => (
       <span className="relative z-10 h-4 w-4 rounded-full border-4 border-white bg-olive shadow transition-transform duration-500 group-hover:scale-150 group-hover:bg-lime" />
     </div>
     <div className="relative overflow-hidden rounded-[22px] transition-transform duration-700 group-hover:-translate-y-2">
-      <FitImage src={m.img} alt={`${m.year} — ${m.title}`} className="w-full" style={{ aspectRatio: m.ratio }} />
+      <img src={m.img} alt={`${m.year} — ${m.title}`} loading="lazy" style={{ objectPosition: m.pos || "center" }} className="aspect-[4/3] w-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" />
     </div>
     <p className="font-display mt-6 text-4xl tracking-tight text-olive md:text-5xl">{m.year}</p>
     <h3 className="font-display mt-3 text-xl tracking-tight md:text-2xl">{m.title}</h3>

@@ -32,7 +32,6 @@ function Home() {
     <main>
       <Banner />
       <Hero />
-      <Impact />
       <Vision />
       <Timeline />
       <Approach />
@@ -40,6 +39,7 @@ function Home() {
       <Stories />
       <Partners />
       <Involved />
+      <Impact />
     </main>
   );
 }
