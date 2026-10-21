@@ -10,10 +10,9 @@ const Row = ({ it, k }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
-  const flip = k % 2 === 1;
   return (
     <div ref={ref} data-testid={`intervention-${it.slug}`} className="grid grid-cols-1 items-center gap-8 border-t border-ink/10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16">
-      <Reveal className={`lg:col-span-6 ${flip ? "lg:order-2" : ""}`}>
+      <Reveal className="lg:order-2 lg:col-span-6">
         <div className="relative h-[300px] overflow-hidden rounded-[28px] md:h-[440px]">
           <motion.div style={{ y }} className="absolute -inset-y-[10%] inset-x-0">
             <Placeholder label={`${it.pillar} imagery`} className="h-full" />
@@ -21,7 +20,7 @@ const Row = ({ it, k }) => {
           <span className="absolute left-5 top-5 rounded-full bg-lime px-3.5 py-1.5 text-xs font-semibold text-ink">{it.pillar}</span>
         </div>
       </Reveal>
-      <div className={`lg:col-span-6 ${flip ? "lg:order-1" : ""}`}>
+      <div className="text-left lg:order-1 lg:col-span-6">
         <Reveal delay={0.06}>
           <Link to={`/interventions/${it.slug}`} className="group block" data-testid={`intervention-link-${it.slug}`}>
             <h3 className="programme-name text-[2.6rem] sm:text-6xl lg:text-7xl">
@@ -42,7 +41,7 @@ const Row = ({ it, k }) => {
 };
 
 export const Interventions = () => (
-  <section className="relative bg-white py-24 text-ink md:py-36" data-testid="interventions-section">
+  <section className="relative bg-transparent py-24 text-ink md:py-36" data-testid="interventions-section">
     <div className="container-lc relative z-10">
       <div className="flex flex-col gap-6 pb-10 md:flex-row md:items-end md:justify-between md:pb-14">
         <div className="max-w-2xl">

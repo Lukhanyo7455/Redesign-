@@ -8,6 +8,7 @@ import { Hero } from "./components/site/Hero";
 import { Stats, Vision, Approach, Impact, Stories, Partners, Banner, Involved } from "./components/site/Sections";
 import { Interventions } from "./components/site/Interventions";
 import { Footer } from "./components/site/Footer";
+import { Celebration } from "./components/site/Celebration";
 
 const useLenis = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const ScrollTop = () => {
 function Home() {
   return (
     <main>
+      <Banner />
       <Hero />
       <Stats />
       <Vision />
@@ -37,7 +39,6 @@ function Home() {
       <Stories />
       <Partners />
       <Involved />
-      <Banner />
     </main>
   );
 }
@@ -49,6 +50,7 @@ function App() {
       <BrowserRouter>
         <ScrollTop />
         <Intro />
+        <Celebration />
         <Nav />
         <Routes>
           <Route path="*" element={<Home />} />

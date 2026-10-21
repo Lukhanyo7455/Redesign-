@@ -19,6 +19,11 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - Removed footer donate CTA band; added full-width image banner (user-supplied photo) in its place
 - Nav dropdown: blur/scale entrance, staggered items, lime sweep + arrow on hover, sliding hover pill, rotating chevron
 
+## Update 2 (2026-10-21)
+- Photo banner moved to top (full-screen first view); soft green gradient site background; image placeholders tinted green
+- All 4 programme rows identical: text left, image right
+- 21st birthday popup (2005–2026) with confetti (canvas-confetti), shows once per browser session
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography

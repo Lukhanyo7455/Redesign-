@@ -15,6 +15,23 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   line-height: 1.7;
 }
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 0% 0%, rgba(171, 204, 55, 0.28) 0%, transparent 70%),
+    radial-gradient(55% 45% at 100% 40%, rgba(74, 97, 48, 0.16) 0%, transparent 70%),
+    radial-gradient(70% 55% at 20% 100%, rgba(171, 204, 55, 0.22) 0%, transparent 70%),
+    linear-gradient(180deg, #f6f9ec 0%, #eef4dc 50%, #e6efcc 100%);
+}
+.birthday-number {
+  background: linear-gradient(120deg, #ABCC37 0%, #F5C542 50%, #ABCC37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer { to { background-position: 200% center; } }
+.birthday-glow { animation: pulse-glow 2.4s ease-in-out infinite; }
+@keyframes pulse-glow { 50% { opacity: 0.5; transform: translateX(-50%) scale(1.2); } }
 ::selection { background: var(--lime); color: var(--ink); }
 
 h1, h2, h3 { line-height: 1.2 !important; }
@@ -62,7 +79,7 @@ p { line-height: 1.75; }
   position: relative; display: flex; align-items: center; justify-content: center; width: 100%;
   background:
     repeating-linear-gradient(135deg, rgba(18, 22, 15, 0.04) 0 1px, transparent 1px 14px),
-    radial-gradient(120% 90% at 20% 10%, #f4f5f0 0%, #e9ebe3 60%, #dfe2d6 100%);
+    radial-gradient(120% 90% at 20% 10%, #fbfdf5 0%, #eef4dc 60%, #dfe9c3 100%);
 }
 .ph-dark {
   background:

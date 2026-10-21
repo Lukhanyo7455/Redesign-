@@ -5,7 +5,7 @@ import { ArrowRight, ArrowDownRight } from "lucide-react";
 import { HERO_IMAGES } from "../../data/site";
 import { MaskLines } from "./Motion";
 
-const D = 2.4;
+const D = 0.2;
 
 export const Hero = () => {
   const [i, setI] = useState(0);
@@ -21,7 +21,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section ref={ref} data-testid="hero-section" className="relative bg-white pt-24 text-ink md:pt-28">
+    <section ref={ref} data-testid="hero-section" className="relative bg-transparent pt-20 text-ink md:pt-28">
       <div className="container-lc grid grid-cols-1 gap-10 pb-16 lg:grid-cols-12 lg:gap-8 lg:pb-24">
         <div className="relative z-10 lg:col-span-7 lg:pt-12">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: D }} className="eyebrow text-olive">

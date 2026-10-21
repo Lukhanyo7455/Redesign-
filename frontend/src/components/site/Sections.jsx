@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { STATS, APPROACH, IMPACT, STORIES, PARTNERS, INVOLVED } from "../../data/site";
-import { Reveal, CountUp, Placeholder } from "./Motion";
+import { Reveal, CountUp, Placeholder, MaskLines } from "./Motion";
 
 export const Eyebrow = ({ children, light }) => (
   <p className={`eyebrow mb-6 ${light ? "text-lime" : "text-olive"}`}>{children}</p>
 );
 
 export const Stats = () => (
-  <section className="bg-white text-ink" data-testid="stats-strip">
+  <section className="bg-transparent text-ink" data-testid="stats-strip">
     <div className="container-lc grid grid-cols-2 border-y border-ink/10 md:grid-cols-4">
       {STATS.map((s, k) => (
         <Reveal key={s.label} delay={k * 0.07} className={`py-8 md:py-10 ${k % 2 ? "pl-6" : ""} ${k > 0 ? "md:border-l md:border-ink/10 md:pl-8" : ""}`}>
@@ -22,7 +22,7 @@ export const Stats = () => (
 );
 
 export const Vision = () => (
-  <section className="relative bg-bone py-24 md:py-36" data-testid="vision-section">
+  <section className="relative bg-transparent py-24 md:py-36" data-testid="vision-section">
     <div className="container-lc grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20">
       <Reveal className="lg:col-span-5"><Placeholder label="Life Choices imagery" className="h-[360px] rounded-[28px] md:h-[520px]" /></Reveal>
       <div className="lg:col-span-7">
@@ -47,7 +47,7 @@ export const Vision = () => (
 );
 
 export const Approach = () => (
-  <section className="relative bg-sand py-24 md:py-36" data-testid="approach-section">
+  <section className="relative bg-lime/10 py-24 md:py-36" data-testid="approach-section">
     <div className="container-lc grid grid-cols-1 gap-14 lg:grid-cols-12">
       <div className="lg:col-span-5">
         <div className="lg:sticky lg:top-32">
@@ -74,7 +74,7 @@ export const Approach = () => (
 );
 
 export const Impact = () => (
-  <section className="relative overflow-hidden border-t border-ink/10 bg-white py-24 text-ink md:py-36" data-testid="impact-section">
+  <section className="relative overflow-hidden border-t border-ink/10 bg-transparent py-24 text-ink md:py-36" data-testid="impact-section">
     <div className="container-lc relative z-10 grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
       <div className="lg:col-span-5">
         <Reveal><Eyebrow>Measured Impact</Eyebrow></Reveal>
@@ -95,7 +95,7 @@ export const Impact = () => (
 );
 
 export const Stories = () => (
-  <section className="bg-bone py-24 md:py-36" data-testid="stories-section">
+  <section className="bg-transparent py-24 md:py-36" data-testid="stories-section">
     <div className="container-lc">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
@@ -128,7 +128,7 @@ export const Stories = () => (
 export const Partners = () => {
   const row = [...PARTNERS, ...PARTNERS];
   return (
-    <section className="border-y border-ink/10 bg-white py-14 md:py-20" data-testid="partners-marquee">
+    <section className="border-y border-ink/10 bg-lime/10 py-14 md:py-20" data-testid="partners-marquee">
       <Reveal><p className="text-center text-xs uppercase tracking-[0.22em] text-ink/60">Working alongside partners across government, business &amp; philanthropy</p></Reveal>
       <div className="relative mt-10 overflow-hidden">
         <div className="marquee flex w-max items-center">
@@ -146,20 +146,23 @@ export const Partners = () => {
 
 export const Banner = () => (
   <section data-testid="image-banner" className="relative overflow-hidden">
-    <div className="relative h-[560px] md:h-[680px]">
+    <div className="relative h-[100svh] min-h-[640px] max-h-[960px]">
       <motion.img
         src="/hero/banner.webp" alt="Learners from a Life Choices programme"
         className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
-        initial={{ scale: 1.15 }} whileInView={{ scale: 1 }} viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ scale: 1.15 }} animate={{ scale: 1 }}
+        transition={{ duration: 2.4, delay: 1.8, ease: [0.22, 1, 0.36, 1] }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/50 to-ink/10" />
-      <div className="container-lc relative flex h-full items-end pb-14 md:items-center md:pb-0">
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/60 to-transparent" />
+      <div className="container-lc relative flex h-full items-end pb-16 pt-28 md:items-center md:pb-0">
         <div className="max-w-2xl text-white">
-          <Reveal><p className="eyebrow mb-6 text-lime">Healing · Uplifting · Empowering</p></Reveal>
-          <Reveal delay={0.08}><h2 className="font-display text-4xl tracking-tight md:text-6xl">Ignite the potential of every young person.</h2></Reveal>
-          <Reveal delay={0.16}><p className="mt-6 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
-          <Reveal delay={0.24}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-9">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
+          <Reveal delay={2.4}><p className="eyebrow mb-6 text-lime">Healing · Uplifting · Empowering</p></Reveal>
+          <h2 className="font-display text-4xl tracking-tight md:text-6xl lg:text-7xl">
+            <MaskLines delay={2.5} lines={["Ignite the potential", "of every young person."]} />
+          </h2>
+          <Reveal delay={2.9}><p className="mt-6 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
+          <Reveal delay={3.0}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-9">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
         </div>
       </div>
     </div>
@@ -167,7 +170,7 @@ export const Banner = () => (
 );
 
 export const Involved = () => (
-  <section className="bg-bone py-24 md:py-36" data-testid="involved-section">
+  <section className="bg-transparent py-24 md:py-36" data-testid="involved-section">
     <div className="container-lc grid grid-cols-1 gap-14 lg:grid-cols-12">
       <div className="lg:col-span-5">
         <Reveal><Eyebrow>Get Involved</Eyebrow></Reveal>
