@@ -24,7 +24,7 @@ export const Stats = () => (
 export const Vision = () => (
   <section className="relative bg-transparent py-24 md:py-36" data-testid="vision-section">
     <div className="container-lc grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20">
-      <Reveal className="lg:col-span-5"><Placeholder label="Life Choices imagery" className="h-[360px] rounded-[28px] md:h-[520px]" /></Reveal>
+      <Reveal className="lg:col-span-5"><Placeholder label="Young people at Life Choices" src="/hero/hero1.webp" className="h-[360px] rounded-[28px] md:h-[520px]" /></Reveal>
       <div className="lg:col-span-7">
         <Reveal><Eyebrow>Our Vision</Eyebrow></Reveal>
         <Reveal delay={0.06}><p className="text-lg text-ink/60">Life Choices is working towards a world where…</p></Reveal>
@@ -54,7 +54,7 @@ export const Approach = () => (
           <Reveal><Eyebrow>Our Approach</Eyebrow></Reveal>
           <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">Five building blocks that help young people <em className="font-serif font-normal italic">thrive.</em></h2></Reveal>
           <Reveal delay={0.12}><p className="mt-6 max-w-md text-base text-ink/70 md:text-lg">Our programmes operate across all these blocks so that young people can know themselves, access caring youth-friendly support, gain vital life skills, and get ready for their future.</p></Reveal>
-          <Reveal delay={0.18}><Placeholder label="Approach imagery" className="mt-10 h-[240px] rounded-[24px] md:h-[300px]" /></Reveal>
+          <Reveal delay={0.18}><Placeholder label="Learners in a wellness session" src="/photos/wellness-spes-bona.webp" className="mt-10 h-[240px] rounded-[24px] md:h-[300px]" /></Reveal>
         </div>
       </div>
       <ol className="lg:col-span-7">
@@ -109,7 +109,7 @@ export const Stories = () => (
           <Reveal key={s.slug} delay={k * 0.06}>
             <Link to={`/stories/${s.slug}`} data-testid={`story-row-${k}`} className="group grid grid-cols-1 items-center gap-6 border-t border-ink/10 py-8 md:grid-cols-12 md:gap-10">
               <div className="overflow-hidden rounded-[20px] md:col-span-4">
-                <Placeholder label={`${s.tag} story`} className="h-56 transition-transform duration-700 group-hover:scale-105 md:h-52" />
+                <Placeholder label={s.title} src={s.img} className="h-56 transition-transform duration-700 group-hover:scale-105 md:h-52" />
               </div>
               <div className="md:col-span-7">
                 <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-ink/60"><span className="font-semibold text-olive">{s.tag}</span><span className="h-1 w-1 rounded-full bg-ink/40" />{s.date}</div>
@@ -175,7 +175,7 @@ export const Involved = () => (
       <div className="lg:col-span-5">
         <Reveal><Eyebrow>Get Involved</Eyebrow></Reveal>
         <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">There are many ways to <em className="font-serif font-normal italic">change the story.</em></h2></Reveal>
-        <Reveal delay={0.12}><Placeholder label="Get involved imagery" className="mt-10 h-[260px] rounded-[24px] md:h-[340px]" /></Reveal>
+        <Reveal delay={0.12}><Placeholder label="YouthCode Project graduates" src="/photos/academy-certificates.jpg" className="mt-10 h-[260px] rounded-[24px] md:h-[340px]" /></Reveal>
       </div>
       <div className="lg:col-span-7">
         {INVOLVED.map((g, k) => (

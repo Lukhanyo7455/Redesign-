@@ -15,7 +15,7 @@ const Row = ({ it, k }) => {
       <Reveal className="lg:order-2 lg:col-span-6">
         <div className="relative h-[300px] overflow-hidden rounded-[28px] md:h-[440px]">
           <motion.div style={{ y }} className="absolute -inset-y-[10%] inset-x-0">
-            <Placeholder label={`${it.pillar} imagery`} className="h-full" />
+            <Placeholder label={`${it.name} programme photo`} src={it.img} pos={it.slug === "leaders-quest" ? "center top" : "center"} className="h-full" />
           </motion.div>
           <span className="absolute left-5 top-5 rounded-full bg-lime px-3.5 py-1.5 text-xs font-semibold text-ink">{it.pillar}</span>
         </div>

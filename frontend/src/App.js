@@ -8,6 +8,7 @@ import { Hero } from "./components/site/Hero";
 import { Stats, Vision, Approach, Impact, Stories, Partners, Banner, Involved } from "./components/site/Sections";
 import { Interventions } from "./components/site/Interventions";
 import { Footer } from "./components/site/Footer";
+import { Timeline } from "./components/site/Timeline";
 import { Celebration } from "./components/site/Celebration";
 
 const useLenis = () => {
@@ -33,6 +34,7 @@ function Home() {
       <Hero />
       <Stats />
       <Vision />
+      <Timeline />
       <Approach />
       <Interventions />
       <Impact />

@@ -49,8 +49,12 @@ export const CountUp = ({ value, suffix = "", className = "" }) => {
   );
 };
 
-export const Placeholder = ({ label, className = "", testId }) => (
-  <div data-testid={testId} className={`ph ${className}`}>
-    <span className="ph-label">{label}</span>
+export const Placeholder = ({ label, className = "", testId, src, pos = "center" }) => (
+  <div data-testid={testId} className={`ph overflow-hidden ${className}`}>
+    {src ? (
+      <img src={src} alt={label} loading="lazy" className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition: pos }} />
+    ) : (
+      <span className="ph-label">{label}</span>
+    )}
   </div>
 );

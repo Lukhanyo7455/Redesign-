@@ -25,10 +25,10 @@ export const APPROACH = [
 ];
 
 export const INTERVENTIONS = [
-  { slug: "family-affairs", name: "Family Affairs", pillar: "Family Stability", text: "Positive parenting workshops, one-on-one counselling and ongoing support circles that help families thrive.", tags: ["Parenting workshops", "Counselling", "Support circles"] },
-  { slug: "health4life", name: "Health4Life", pillar: "Health & Wellbeing", text: "Health information, counselling and psychosocial support delivered in partnership with schools and communities.", tags: ["Health information", "Psychosocial support", "School partnerships"] },
-  { slug: "leaders-quest", name: "Leaders’ Quest", pillar: "Leadership & Life Skills", text: "After-school leadership and life-skills training, coaching and experiential learning across Cape Town high schools.", tags: ["After-school training", "Coaching", "Experiential learning"] },
-  { slug: "life-choices-academy", name: "Life Choices Academy", pillar: "Employment & Work-readiness", text: "Skills development and work-readiness training that helps young people transition into employment and opportunity.", tags: ["Skills development", "Work-readiness", "Employment pathways"] },
+  { slug: "family-affairs", img: "/hero/hero2.webp", name: "Family Affairs", pillar: "Family Stability", text: "Positive parenting workshops, one-on-one counselling and ongoing support circles that help families thrive.", tags: ["Parenting workshops", "Counselling", "Support circles"] },
+  { slug: "health4life", img: "/photos/health4life-team.jpg", name: "Health4Life", pillar: "Health & Wellbeing", text: "Health information, counselling and psychosocial support delivered in partnership with schools and communities.", tags: ["Health information", "Psychosocial support", "School partnerships"] },
+  { slug: "leaders-quest", img: "/photos/lq-2022-cover.jpg", name: "Leaders’ Quest", pillar: "Leadership & Life Skills", text: "After-school leadership and life-skills training, coaching and experiential learning across Cape Town high schools.", tags: ["After-school training", "Coaching", "Experiential learning"] },
+  { slug: "life-choices-academy", img: "/photos/youthcode-laptop.jpg", name: "Life Choices Academy", pillar: "Employment & Work-readiness", text: "Skills development and work-readiness training that helps young people transition into employment and opportunity.", tags: ["Skills development", "Work-readiness", "Employment pathways"] },
 ];
 
 export const IMPACT = [
@@ -39,9 +39,20 @@ export const IMPACT = [
 ];
 
 export const STORIES = [
-  { slug: "nurturing-the-leader-within", tag: "Leaders’ Quest", date: "May 2025", title: "Nurturing the Leader Within", text: "How one learner discovered the confidence to speak, lead and imagine a bigger future. [Placeholder excerpt for prototype.]" },
-  { slug: "rebuilding-relationships", tag: "Family Affairs", date: "April 2025", title: "Rebuilding Relationships", text: "A caregiver rebuilds trust at home after joining a positive parenting support circle. [Placeholder excerpt for prototype.]" },
-  { slug: "a-beacon-of-love", tag: "Family Affairs", date: "March 2025", title: "A Beacon of Love", text: "Finding strength and community through counselling and connection. [Placeholder excerpt for prototype.]" },
+  { slug: "nurturing-the-leader-within", img: "/hero/banner.webp", tag: "Leaders’ Quest", date: "May 2025", title: "Nurturing the Leader Within", text: "How one learner discovered the confidence to speak, lead and imagine a bigger future. [Placeholder excerpt for prototype.]" },
+  { slug: "rebuilding-relationships", img: "/photos/wellness-spes-bona.webp", tag: "Family Affairs", date: "April 2025", title: "Rebuilding Relationships", text: "A caregiver rebuilds trust at home after joining a positive parenting support circle. [Placeholder excerpt for prototype.]" },
+  { slug: "a-beacon-of-love", img: "/hero/hero2.webp", tag: "Family Affairs", date: "March 2025", title: "A Beacon of Love", text: "Finding strength and community through counselling and connection. [Placeholder excerpt for prototype.]" },
+];
+
+export const TIMELINE = [
+  { year: "2005", title: "Life Choices is founded", text: "A youth development organisation is born in Cape Town to invest in young people.", img: "/hero/hero1.webp" },
+  { year: "Year TBC", title: "Family Affairs begins", text: "Positive parenting workshops, counselling and support circles help families thrive.", img: "/hero/hero2.webp" },
+  { year: "Year TBC", title: "Health4Life on the move", text: "Health information and psychosocial support reach schools and communities.", img: "/photos/health4life-team.jpg" },
+  { year: "Year TBC", title: "Leaders’ Quest grows", text: "After-school leadership training expands across Cape Town high schools.", img: "/hero/banner.webp" },
+  { year: "2022", title: "Leaders’ Quest Annual Report", text: "A year of leadership and life-skills outcomes shared openly with partners.", img: "/photos/lq-2022-cover.jpg" },
+  { year: "Year TBC", title: "YouthCode Project", text: "Life Choices Academy learners graduate with coding and work-readiness skills.", img: "/photos/academy-certificates.jpg" },
+  { year: "Year TBC", title: "200,000+ lives impacted", text: "Two decades of healing, uplifting and empowering young people on the Cape Flats.", img: "/photos/wellness-spes-bona.webp" },
+  { year: "2026", title: "Life Choices turns 21", text: "Celebrating 21 years and looking ahead to the next generation of young leaders.", img: "/photos/youthcode-laptop.jpg" },
 ];
 
 export const PARTNERS = ["Department of Social Development", "Community Partner", "Corporate Supporter", "Philanthropic Foundation", "Education Partner", "Health Partner"];

@@ -24,6 +24,11 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - All 4 programme rows identical: text left, image right
 - 21st birthday popup (2005–2026) with confetti (canvas-confetti), shows once per browser session
 
+## Update 3 (2026-10-21)
+- User photos placed in all image boxes (public/photos), background gradient toned down to near-white
+- Footer fixed: .container-lc padding bug (was overriding py-*) resolved, 4-column aligned grid
+- 21-year timeline auto-scrolling slider (8 milestones; most years marked "Year TBC" pending client data)
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography
