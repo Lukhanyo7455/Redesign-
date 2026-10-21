@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Linkedin, Facebook, Instagram } from "lucide-react";
+import { Linkedin, Facebook, Instagram } from "lucide-react";
 import { FOOTER_ORG, INTERVENTIONS } from "../../data/site";
 import { Logo } from "./Logo";
-import { Reveal } from "./Motion";
 
 const Col = ({ title, items }) => (
   <div>
@@ -15,17 +14,7 @@ const Col = ({ title, items }) => (
 
 export const Footer = () => (
   <footer className="bg-ink text-bone" data-testid="site-footer">
-    <div className="container-lc flex flex-col gap-10 py-20 md:flex-row md:items-end md:justify-between md:py-28">
-      <Reveal>
-        <p className="eyebrow mb-5 text-lime">Be part of the change</p>
-        <h2 className="font-display max-w-3xl text-4xl leading-[1] tracking-tight md:text-7xl">Invest in a young person’s <em className="font-serif font-normal italic text-lime">future</em> today.</h2>
-      </Reveal>
-      <Reveal delay={0.1} className="flex flex-wrap gap-3">
-        <Link to="/get-involved" data-testid="footer-donate-btn" className="btn-lime group">Donate now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link>
-        <Link to="/contact" data-testid="footer-partner-btn" className="btn-ghost">Partner with us</Link>
-      </Reveal>
-    </div>
-    <div className="container-lc grid grid-cols-1 gap-12 border-t border-bone/15 py-16 sm:grid-cols-2 lg:grid-cols-12">
+    <div className="container-lc grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12">
       <div className="lg:col-span-4">
         <Logo className="h-9" />
         <p className="mt-5 max-w-xs text-sm text-bone/70">An innovative youth development organisation based in Cape Town, investing in young people so they can reach their potential.</p>

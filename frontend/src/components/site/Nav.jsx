@@ -5,15 +5,49 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NAV } from "../../data/site";
 import { Logo } from "./Logo";
 
-const Dropdown = ({ items }) => (
-  <div className="invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3 opacity-0 transition-[opacity,transform] duration-300 group-hover:visible group-hover:opacity-100">
-    <div className="rounded-2xl border border-ink/10 bg-bone p-2 shadow-xl">
-      {items.map(([l, h]) => (
-        <Link key={h} to={h} className="block rounded-xl px-4 py-2.5 text-sm text-ink/80 transition-colors hover:bg-ink hover:text-bone">{l}</Link>
-      ))}
-    </div>
-  </div>
+const Dropdown = ({ items, open }) => (
+  <AnimatePresence>
+    {open && (
+      <motion.div
+        className="absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3"
+        initial={{ opacity: 0, y: 12, scale: 0.96, filter: "blur(6px)" }}
+        animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+        exit={{ opacity: 0, y: 8, scale: 0.98, filter: "blur(4px)" }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        style={{ transformOrigin: "top center" }}
+      >
+        <motion.div
+          className="overflow-hidden rounded-2xl border border-ink/10 bg-white p-2 shadow-[0_24px_60px_-20px_rgba(18,22,15,0.35)]"
+          initial="hidden" animate="show"
+          variants={{ show: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } } }}
+        >
+          {items.map(([l, h]) => (
+            <motion.div key={h} variants={{ hidden: { opacity: 0, x: -10 }, show: { opacity: 1, x: 0 } }}>
+              <Link to={h} data-testid={`nav-dropdown-${h.replace(/\//g, "-")}`} className="dd-item group/item relative flex items-center justify-between overflow-hidden rounded-xl px-4 py-3 text-sm text-ink/80">
+                <span className="relative z-10 transition-[transform,color] duration-300 group-hover/item:translate-x-1 group-hover/item:text-ink">{l}</span>
+                <ArrowRight className="relative z-10 h-3.5 w-3.5 -translate-x-2 text-olive opacity-0 transition-[opacity,transform] duration-300 group-hover/item:translate-x-0 group-hover/item:opacity-100" />
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+    )}
+  </AnimatePresence>
 );
+
+const NavItem = ({ n }) => {
+  const [hover, setHover] = useState(false);
+  return (
+    <div className="relative" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <Link to={n.href} data-testid={`nav-${n.label.toLowerCase()}`} className="relative flex items-center gap-1 rounded-full px-4 py-2 text-sm text-ink/75 transition-colors hover:text-ink">
+        {hover && <motion.span layoutId="nav-pill" className="absolute inset-0 -z-10 rounded-full bg-lime/30" transition={{ type: "spring", stiffness: 400, damping: 32 }} />}
+        {n.label}
+        {n.children && <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${hover ? "rotate-180" : ""}`} />}
+      </Link>
+      {n.children && <Dropdown items={n.children} open={hover} />}
+    </div>
+  );
+};
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
@@ -21,15 +55,8 @@ export const Nav = () => {
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-6 md:pt-4">
       <div className="mx-auto flex max-w-[1320px] items-center justify-between rounded-full border border-ink/10 bg-bone/75 py-2 pl-3 pr-2 backdrop-blur-xl">
         <Link to="/" data-testid="nav-logo" className="rounded-full bg-ink px-4 py-2"><Logo className="h-6 md:h-7" /></Link>
-        <nav className="hidden items-center gap-1 lg:flex">
-          {NAV.map((n) => (
-            <div key={n.label} className="group relative">
-              <Link to={n.href} data-testid={`nav-${n.label.toLowerCase()}`} className="flex items-center gap-1 rounded-full px-4 py-2 text-sm text-ink/75 transition-colors hover:text-ink">
-                {n.label}{n.children && <ChevronDown className="h-3.5 w-3.5" />}
-              </Link>
-              {n.children && <Dropdown items={n.children} />}
-            </div>
-          ))}
+        <nav className="isolate hidden items-center gap-1 lg:flex">
+          {NAV.map((n) => <NavItem key={n.label} n={n} />)}
         </nav>
         <div className="flex items-center gap-2">
           <Link to="/get-involved" className="hidden px-3 text-sm text-ink/75 hover:text-ink md:block" data-testid="nav-get-involved">Get Involved</Link>

@@ -21,27 +21,27 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section ref={ref} data-testid="hero-section" className="relative bg-ink pt-24 text-bone md:pt-28">
+    <section ref={ref} data-testid="hero-section" className="relative bg-white pt-24 text-ink md:pt-28">
       <div className="container-lc grid grid-cols-1 gap-10 pb-16 lg:grid-cols-12 lg:gap-8 lg:pb-24">
         <div className="relative z-10 lg:col-span-7 lg:pt-12">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: D }} className="eyebrow text-lime">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: D }} className="eyebrow text-olive">
             Youth development · Cape Town · Since 2005
           </motion.p>
-          <h1 data-testid="hero-heading" className="font-display mt-6 text-[2.75rem] leading-[0.98] tracking-[-0.03em] sm:text-6xl lg:text-[5.6rem]">
+          <h1 data-testid="hero-heading" className="font-display mt-6 text-[2.5rem] tracking-[-0.03em] sm:text-6xl lg:text-[4.6rem]">
             <MaskLines delay={D + 0.1} lines={[
-              <>Youth is <span className="text-lime">37%</span></>,
+              <>Youth is <span className="text-olive">37%</span></>,
               <>of South Africa,</>,
               <>yet <em className="font-serif font-normal italic">100%</em> of</>,
               <>its future.</>,
             ]} />
           </h1>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: D + 0.7, duration: 0.9 }}>
-            <p className="mt-8 max-w-xl text-base text-bone/75 md:text-lg">
+            <p className="mt-8 max-w-xl text-base text-ink/70 md:text-lg">
               Life Choices is an innovative and impactful youth development organisation based in Cape Town. We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/get-involved" data-testid="hero-support-btn" className="btn-lime group">Support our work <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link>
-              <Link to="/interventions" data-testid="hero-programmes-btn" className="btn-ghost">Explore our programmes</Link>
+              <Link to="/interventions" data-testid="hero-programmes-btn" className="btn-ghost btn-ghost-dark">Explore our programmes</Link>
             </div>
           </motion.div>
         </div>

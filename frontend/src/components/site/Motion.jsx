@@ -44,7 +44,7 @@ export const CountUp = ({ value, suffix = "", className = "" }) => {
   return (
     <span ref={ref} className={className}>
       {n.toLocaleString("en-US")}
-      <span className="text-lime">{suffix}</span>
+      <span className="text-olive">{suffix}</span>
     </span>
   );
 };

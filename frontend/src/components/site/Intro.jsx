@@ -25,7 +25,6 @@ export const Intro = () => {
           <h1 className="font-display mt-8 px-6 text-center text-4xl sm:text-6xl lg:text-7xl tracking-tight">
             <MaskLines lines={[<>Welcome to <em className="font-serif italic font-normal text-lime">Life Choices</em></>]} delay={0.3} />
           </h1>
-          <motion.span className="mt-8 block h-[2px] bg-lime" initial={{ width: 0 }} animate={{ width: 160 }} transition={{ duration: 1.4, delay: 0.5 }} />
         </motion.div>
       )}
     </AnimatePresence>

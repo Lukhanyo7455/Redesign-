@@ -13,6 +13,12 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - Interventions (Family Affairs, Health4Life, Leaders’ Quest, Academy) reworked into alternating rows with large italic serif names and parallax placeholders
 - Intro overlay, masked hero headline, 3D parallax hero image, count-up stats, slow serif marquee, SVG favicon
 
+## Update (2026-10-21)
+- Whole site set to Plus Jakarta Sans, white backgrounds (footer stays dark), relaxed line spacing everywhere
+- Removed numbering, eyebrow dashes and paragraph underline dashes
+- Removed footer donate CTA band; added full-width image banner (user-supplied photo) in its place
+- Nav dropdown: blur/scale entrance, staggered items, lime sweep + arrow on hover, sliding hover pill, rotating chevron
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography
