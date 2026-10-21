@@ -25,9 +25,9 @@ export const APPROACH = [
 ];
 
 export const INTERVENTIONS = [
-  { slug: "family-affairs", img: "/hero/hero2.webp", name: "Family Affairs", pillar: "Family Stability", text: "Positive parenting workshops, one-on-one counselling and ongoing support circles that help families thrive.", tags: ["Parenting workshops", "Counselling", "Support circles"] },
+  { slug: "family-affairs", img: "/hero/hero2.webp", ratio: "aspect-[970/590]", name: "Family Affairs", pillar: "Family Stability", text: "Positive parenting workshops, one-on-one counselling and ongoing support circles that help families thrive.", tags: ["Parenting workshops", "Counselling", "Support circles"] },
   { slug: "health4life", img: "/photos/health4life-team.jpg", name: "Health4Life", pillar: "Health & Wellbeing", text: "Health information, counselling and psychosocial support delivered in partnership with schools and communities.", tags: ["Health information", "Psychosocial support", "School partnerships"] },
-  { slug: "leaders-quest", img: "/photos/lq-2022-cover.jpg", name: "Leaders’ Quest", pillar: "Leadership & Life Skills", text: "After-school leadership and life-skills training, coaching and experiential learning across Cape Town high schools.", tags: ["After-school training", "Coaching", "Experiential learning"] },
+  { slug: "leaders-quest", img: "/photos/lq-2022-cover.jpg", ratio: "aspect-[1218/862]", name: "Leaders’ Quest", pillar: "Leadership & Life Skills", text: "After-school leadership and life-skills training, coaching and experiential learning across Cape Town high schools.", tags: ["After-school training", "Coaching", "Experiential learning"] },
   { slug: "life-choices-academy", img: "/photos/youthcode-laptop.jpg", name: "Life Choices Academy", pillar: "Employment & Work-readiness", text: "Skills development and work-readiness training that helps young people transition into employment and opportunity.", tags: ["Skills development", "Work-readiness", "Employment pathways"] },
 ];
 
@@ -41,20 +41,24 @@ export const IMPACT = [
 export const STORIES = [
   { slug: "nurturing-the-leader-within", img: "/hero/banner.webp", tag: "Leaders’ Quest", date: "May 2025", title: "Nurturing the Leader Within", text: "How one learner discovered the confidence to speak, lead and imagine a bigger future. [Placeholder excerpt for prototype.]" },
   { slug: "rebuilding-relationships", img: "/photos/wellness-spes-bona.webp", tag: "Family Affairs", date: "April 2025", title: "Rebuilding Relationships", text: "A caregiver rebuilds trust at home after joining a positive parenting support circle. [Placeholder excerpt for prototype.]" },
-  { slug: "a-beacon-of-love", img: "/hero/hero2.webp", tag: "Family Affairs", date: "March 2025", title: "A Beacon of Love", text: "Finding strength and community through counselling and connection. [Placeholder excerpt for prototype.]" },
+  { slug: "a-beacon-of-love", img: "/hero/hero2.webp", ratio: "aspect-[970/590]", tag: "Family Affairs", date: "March 2025", title: "A Beacon of Love", text: "Finding strength and community through counselling and connection. [Placeholder excerpt for prototype.]" },
 ];
 
 export const TIMELINE = [
-  { year: "2005", title: "Where it all began", text: "Life Choices is founded in Cape Town to invest in young people.", img: "/timeline/2005.webp", pos: "center 20%" },
-  { year: "2013", title: "Youth voices rise", text: "Young people step up as leaders in their schools and communities.", img: "/timeline/2013.webp" },
-  { year: "2015", title: "Celebrating graduates", text: "Learners mark new skills and certificates with pride.", img: "/timeline/2015.webp" },
-  { year: "2017", title: "A growing family", text: "Our circle of youth, staff and partners keeps growing.", img: "/timeline/2017.webp" },
-  { year: "2019", title: "Conversations that matter", text: "Safe spaces for young people to talk, reflect and grow.", img: "/timeline/2019.webp" },
-  { year: "2021", title: "Milestone coming soon", text: "[Add the 2021 story here.]", img: null },
-  { year: "2026", title: "Milestone coming soon", text: "[Add the 2026 story here.]", img: null },
+  { year: "2005", title: "Where it all began", text: "Life Choices is founded in Cape Town to invest in young people.", img: "/timeline/2005.webp", ratio: "1 / 1", pos: "center 20%" },
+  { year: "2013", title: "Youth voices rise", text: "Young people step up as leaders in their schools and communities.", img: "/timeline/2013.webp", ratio: "1 / 1" },
+  { year: "2015", title: "Celebrating graduates", text: "Learners mark new skills and certificates with pride.", img: "/timeline/2015.webp", ratio: "1500 / 525" },
+  { year: "2017", title: "A growing family", text: "Our circle of youth, staff and partners keeps growing.", img: "/timeline/2017.webp", ratio: "970 / 590" },
+  { year: "2019", title: "Conversations that matter", text: "Safe spaces for young people to talk, reflect and grow.", img: "/timeline/2019.webp", ratio: "1920 / 831" },
+  { year: "2021", title: "Leaders in the making", text: "Leaders’ Quest learners grow in confidence, together.", img: "/timeline/2021.webp", ratio: "1100 / 811" },
+  { year: "2026", title: "21 years strong", text: "Life Choices Academy prepares youth for the future of work.", img: "/timeline/2026.webp", ratio: "1100 / 811" },
 ];
 
-export const PARTNERS = ["Department of Social Development", "Community Partner", "Corporate Supporter", "Philanthropic Foundation", "Education Partner", "Health Partner"];
+export const PARTNERS = [
+  { name: "Industrial Development Corporation", logo: "/partners/idc.png" },
+  { name: "Don Bosco Mondo", logo: "/partners/don-bosco-mondo.png" },
+  { name: "Argon Asset Management", logo: "/partners/argon.jpg" },
+];
 
 export const INVOLVED = [
   { title: "Donate", text: "Fund a young person’s journey through our programmes.", href: "/get-involved" },

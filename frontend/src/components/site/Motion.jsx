@@ -49,12 +49,17 @@ export const CountUp = ({ value, suffix = "", className = "" }) => {
   );
 };
 
-export const Placeholder = ({ label, className = "", testId, src, pos = "center" }) => (
-  <div data-testid={testId} className={`ph overflow-hidden ${className}`}>
-    {src ? (
-      <img src={src} alt={label} loading="lazy" className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition: pos }} />
-    ) : (
-      <span className="ph-label">{label}</span>
-    )}
+export const FitImage = ({ src, alt, className = "", style }) => (
+  <div className={`relative overflow-hidden bg-ink/5 ${className}`} style={style}>
+    <img src={src} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-2xl" />
+    <img src={src} alt={alt} loading="lazy" className="relative h-full w-full object-contain" />
   </div>
+);
+
+export const Placeholder = ({ label, className = "", testId, src }) => (
+  src ? <FitImage src={src} alt={label} className={className} /> : (
+    <div data-testid={testId} className={`ph overflow-hidden ${className}`}>
+      <span className="ph-label">{label}</span>
+    </div>
+  )
 );

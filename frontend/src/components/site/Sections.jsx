@@ -24,7 +24,7 @@ export const Stats = () => (
 export const Vision = () => (
   <section className="relative bg-transparent py-24 md:py-36" data-testid="vision-section">
     <div className="container-lc grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20">
-      <Reveal className="lg:col-span-5"><Placeholder label="Young people at Life Choices" src="/hero/hero1.webp" className="h-[360px] rounded-[28px] md:h-[520px]" /></Reveal>
+      <Reveal className="lg:col-span-5"><Placeholder label="Young people at Life Choices" src="/hero/hero1.webp" className="aspect-[1280/792] w-full rounded-[28px]" /></Reveal>
       <div className="lg:col-span-7">
         <Reveal><Eyebrow>Our Vision</Eyebrow></Reveal>
         <Reveal delay={0.06}><p className="text-lg text-ink/60">Life Choices is working towards a world where…</p></Reveal>
@@ -54,7 +54,7 @@ export const Approach = () => (
           <Reveal><Eyebrow>Our Approach</Eyebrow></Reveal>
           <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">Five building blocks that help young people <em className="font-serif font-normal italic">thrive.</em></h2></Reveal>
           <Reveal delay={0.12}><p className="mt-6 max-w-md text-base text-ink/70 md:text-lg">Our programmes operate across all these blocks so that young people can know themselves, access caring youth-friendly support, gain vital life skills, and get ready for their future.</p></Reveal>
-          <Reveal delay={0.18}><Placeholder label="Learners in a wellness session" src="/photos/wellness-spes-bona.webp" className="mt-10 h-[240px] rounded-[24px] md:h-[300px]" /></Reveal>
+          <Reveal delay={0.18}><Placeholder label="Learners in a wellness session" src="/photos/wellness-spes-bona.webp" className="mt-10 aspect-[3/2] w-full rounded-[24px]" /></Reveal>
         </div>
       </div>
       <ol className="lg:col-span-7">
@@ -109,7 +109,7 @@ export const Stories = () => (
           <Reveal key={s.slug} delay={k * 0.06}>
             <Link to={`/stories/${s.slug}`} data-testid={`story-row-${k}`} className="group grid grid-cols-1 items-center gap-6 border-t border-ink/10 py-8 md:grid-cols-12 md:gap-10">
               <div className="overflow-hidden rounded-[20px] md:col-span-4">
-                <Placeholder label={s.title} src={s.img} className="h-56 transition-transform duration-700 group-hover:scale-105 md:h-52" />
+                <Placeholder label={s.title} src={s.img} className={`${s.ratio || "aspect-[3/2]"} w-full`} />
               </div>
               <div className="md:col-span-7">
                 <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-ink/60"><span className="font-semibold text-olive">{s.tag}</span><span className="h-1 w-1 rounded-full bg-ink/40" />{s.date}</div>
@@ -126,20 +126,19 @@ export const Stories = () => (
 );
 
 export const Partners = () => {
-  const row = [...PARTNERS, ...PARTNERS];
+  const row = [...PARTNERS, ...PARTNERS, ...PARTNERS, ...PARTNERS];
   return (
     <section className="border-y border-ink/10 bg-lime/10 py-14 md:py-20" data-testid="partners-marquee">
-      <Reveal><p className="text-center text-xs uppercase tracking-[0.22em] text-ink/60">Working alongside partners across government, business &amp; philanthropy</p></Reveal>
+      <Reveal><p className="text-center text-xs uppercase tracking-[0.22em] text-ink/60">Proudly supported by our partners</p></Reveal>
       <div className="relative mt-10 overflow-hidden">
         <div className="marquee flex w-max items-center">
           {row.map((p, k) => (
-            <span key={k} className="flex items-center whitespace-nowrap px-8 font-serif text-3xl italic text-ink/75 md:text-5xl">
-              {p}<span className="ml-16 inline-block h-3 w-3 rotate-45 bg-lime" />
-            </span>
+            <div key={k} data-testid={`partner-logo-${k}`} className="mx-4 flex h-28 w-52 shrink-0 items-center justify-center rounded-2xl bg-white px-6 py-4 shadow-sm md:mx-6 md:h-32 md:w-64">
+              <img src={p.logo} alt={p.name} className={`max-h-full max-w-full object-contain ${p.logo.endsWith(".png") ? "scale-150" : ""}`} />
+            </div>
           ))}
         </div>
       </div>
-      <p className="mt-8 text-center text-xs text-ink/55">Partner names shown are placeholders for this prototype.</p>
     </section>
   );
 };
@@ -161,6 +160,7 @@ export const Banner = () => (
           <h2 className="font-display text-4xl tracking-tight md:text-6xl lg:text-7xl">
             <MaskLines delay={2.5} lines={["Ignite the potential", "of every young person."]} />
           </h2>
+          <Reveal delay={2.8}><p data-testid="banner-description" className="mt-6 max-w-xl text-lg font-semibold text-lime md:text-2xl">21 years of investing in South Africa’s youth, from the Cape Flats to the world of work.</p></Reveal>
           <Reveal delay={2.9}><p className="mt-6 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
           <Reveal delay={3.0}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-9">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
         </div>
@@ -175,7 +175,7 @@ export const Involved = () => (
       <div className="lg:col-span-5">
         <Reveal><Eyebrow>Get Involved</Eyebrow></Reveal>
         <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">There are many ways to <em className="font-serif font-normal italic">change the story.</em></h2></Reveal>
-        <Reveal delay={0.12}><Placeholder label="YouthCode Project graduates" src="/photos/academy-certificates.jpg" className="mt-10 h-[260px] rounded-[24px] md:h-[340px]" /></Reveal>
+        <Reveal delay={0.12}><Placeholder label="YouthCode Project graduates" src="/photos/academy-certificates.jpg" className="mt-10 aspect-[1100/811] w-full rounded-[24px]" /></Reveal>
       </div>
       <div className="lg:col-span-7">
         {INVOLVED.map((g, k) => (

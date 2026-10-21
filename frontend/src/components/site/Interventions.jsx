@@ -6,19 +6,17 @@ import { INTERVENTIONS } from "../../data/site";
 import { Reveal, Placeholder } from "./Motion";
 import { Eyebrow } from "./Sections";
 
-const Row = ({ it, k }) => {
+const Row = ({ it }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+  const y = useTransform(scrollYProgress, [0, 1], [24, -24]);
   return (
     <div ref={ref} data-testid={`intervention-${it.slug}`} className="grid grid-cols-1 items-center gap-8 border-t border-ink/10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16">
       <Reveal className="lg:order-2 lg:col-span-6">
-        <div className="relative h-[300px] overflow-hidden rounded-[28px] md:h-[440px]">
-          <motion.div style={{ y }} className="absolute -inset-y-[10%] inset-x-0">
-            <Placeholder label={`${it.name} programme photo`} src={it.img} pos={it.slug === "leaders-quest" ? "center top" : "center"} className="h-full" />
-          </motion.div>
+        <motion.div style={{ y }} className="relative overflow-hidden rounded-[28px]">
+          <Placeholder label={`${it.name} programme photo`} src={it.img} className={`${it.ratio || "aspect-[1100/811]"} w-full`} />
           <span className="absolute left-5 top-5 rounded-full bg-lime px-3.5 py-1.5 text-xs font-semibold text-ink">{it.pillar}</span>
-        </div>
+        </motion.div>
       </Reveal>
       <div className="text-left lg:order-1 lg:col-span-6">
         <Reveal delay={0.06}>
@@ -50,7 +48,7 @@ export const Interventions = () => (
         </div>
         <Reveal delay={0.1}><Link to="/interventions" data-testid="interventions-all-link" className="link-arrow group text-ink">View all programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
       </div>
-      {INTERVENTIONS.map((it, k) => <Row key={it.slug} it={it} k={k} />)}
+      {INTERVENTIONS.map((it) => <Row key={it.slug} it={it} />)}
     </div>
   </section>
 );

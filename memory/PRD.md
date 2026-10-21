@@ -33,6 +33,12 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - Permanent "Celebrating 21 years" nav badge (shows "21" on small screens) reopens confetti popup
 - Timeline rebuilt with client years/photos: 2005, 2013, 2015, 2017, 2019 + empty slots for 2021 and 2026
 
+## Update 5 (2026-10-21)
+- 2021/2026 milestones filled with client photos; partner logo marquee (IDC, Don Bosco Mondo, Argon)
+- All images uncropped (FitImage: contain + blurred backdrop, frames match native ratios); hero parallax zoom removed
+- "More confetti" button removed; popup + confetti on every page load
+- Banner lead description added; footer wordmark outlined in lime with hover fill
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography

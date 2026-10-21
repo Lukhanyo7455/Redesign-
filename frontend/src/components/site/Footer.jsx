@@ -33,8 +33,10 @@ export const Footer = () => (
         <div><p className="text-xs uppercase tracking-widest text-lime">Call</p><a href="tel:+27217614640" className="mt-1 block text-bone/85">+27 21 761 4640</a></div>
       </div>
     </div>
-    <div className="container-lc overflow-hidden border-t border-bone/15 pt-8">
-      <p className="font-display select-none whitespace-nowrap text-center text-[15vw] tracking-[-0.05em] text-bone/[0.06] xl:text-[200px]" style={{ lineHeight: 0.85 }} aria-hidden="true">life choices</p>
+    <div className="container-lc overflow-hidden border-t border-bone/15 pt-10">
+      <p className="footer-wordmark select-none whitespace-nowrap text-center text-[15vw] xl:text-[200px]" aria-hidden="true">
+        <span className="wm-life">life</span><span className="wm-choices">choices</span>
+      </p>
     </div>
     <div className="container-lc">
       <div className="flex flex-col justify-between gap-2 border-t border-bone/15 py-6 text-xs text-bone/60 md:flex-row md:items-center">

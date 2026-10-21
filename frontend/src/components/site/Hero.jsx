@@ -11,8 +11,6 @@ export const Hero = () => {
   const [i, setI] = useState(0);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.18]);
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
   const rot = useTransform(scrollYProgress, [0, 1], [0, -6]);
 
   useEffect(() => {
@@ -52,12 +50,12 @@ export const Hero = () => {
             animate={{ clipPath: "inset(0% 0 0 0 round 28px)" }}
             transition={{ duration: 1.4, delay: D - 0.2, ease: [0.76, 0, 0.24, 1] }}
             style={{ rotateY: rot }}
-            className="relative h-[440px] overflow-hidden rounded-[28px] sm:h-[540px] lg:h-[640px]"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-[28px] bg-ink lg:mt-16"
           >
-            <motion.div style={{ scale, y }} className="absolute inset-0">
+            <motion.div className="absolute inset-0">
               {HERO_IMAGES.map((src, k) => (
                 <img key={src} src={src} alt="Young people at Life Choices" data-testid={`hero-slide-${k}`}
-                  className="absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms]"
+                  className="absolute inset-0 h-full w-full object-contain transition-opacity duration-[1400ms]"
                   style={{ opacity: i === k ? 1 : 0 }} />
               ))}
             </motion.div>

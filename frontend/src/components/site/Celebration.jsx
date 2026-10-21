@@ -25,8 +25,7 @@ export const Celebration = () => {
     return () => window.removeEventListener("lc21-open", openIt);
   }, []);
   useEffect(() => {
-    if (sessionStorage.getItem("lc21-seen")) return undefined;
-    const t = setTimeout(() => { setOpen(true); burst(); sessionStorage.setItem("lc21-seen", "1"); }, 2700);
+    const t = setTimeout(() => { setOpen(true); burst(); }, 2700);
     return () => clearTimeout(t);
   }, []);
 
@@ -57,7 +56,6 @@ export const Celebration = () => {
             <p className="relative mx-auto mt-4 max-w-sm text-base text-white/80">Celebrating 21 years of healing, uplifting and empowering young people across Cape Town. Thank you for being part of the story.</p>
             <div className="relative mt-8 flex flex-wrap justify-center gap-3">
               <Link to="/get-involved" onClick={() => setOpen(false)} data-testid="birthday-celebrate-btn" className="btn-lime">Celebrate with us</Link>
-              <button onClick={burst} data-testid="birthday-confetti-btn" className="btn-ghost">More confetti</button>
             </div>
           </motion.div>
         </motion.div>
