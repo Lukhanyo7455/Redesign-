@@ -20,6 +20,11 @@ const burst = () => {
 export const Celebration = () => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
+    const openIt = () => { setOpen(true); burst(); };
+    window.addEventListener("lc21-open", openIt);
+    return () => window.removeEventListener("lc21-open", openIt);
+  }, []);
+  useEffect(() => {
     if (sessionStorage.getItem("lc21-seen")) return undefined;
     const t = setTimeout(() => { setOpen(true); burst(); sessionStorage.setItem("lc21-seen", "1"); }, 2700);
     return () => clearTimeout(t);

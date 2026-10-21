@@ -29,6 +29,10 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - Footer fixed: .container-lc padding bug (was overriding py-*) resolved, 4-column aligned grid
 - 21-year timeline auto-scrolling slider (8 milestones; most years marked "Year TBC" pending client data)
 
+## Update 4 (2026-10-21)
+- Permanent "Celebrating 21 years" nav badge (shows "21" on small screens) reopens confetti popup
+- Timeline rebuilt with client years/photos: 2005, 2013, 2015, 2017, 2019 + empty slots for 2021 and 2026
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography

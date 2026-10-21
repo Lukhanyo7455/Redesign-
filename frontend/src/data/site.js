@@ -45,14 +45,13 @@ export const STORIES = [
 ];
 
 export const TIMELINE = [
-  { year: "2005", title: "Life Choices is founded", text: "A youth development organisation is born in Cape Town to invest in young people.", img: "/hero/hero1.webp" },
-  { year: "Year TBC", title: "Family Affairs begins", text: "Positive parenting workshops, counselling and support circles help families thrive.", img: "/hero/hero2.webp" },
-  { year: "Year TBC", title: "Health4Life on the move", text: "Health information and psychosocial support reach schools and communities.", img: "/photos/health4life-team.jpg" },
-  { year: "Year TBC", title: "Leaders’ Quest grows", text: "After-school leadership training expands across Cape Town high schools.", img: "/hero/banner.webp" },
-  { year: "2022", title: "Leaders’ Quest Annual Report", text: "A year of leadership and life-skills outcomes shared openly with partners.", img: "/photos/lq-2022-cover.jpg" },
-  { year: "Year TBC", title: "YouthCode Project", text: "Life Choices Academy learners graduate with coding and work-readiness skills.", img: "/photos/academy-certificates.jpg" },
-  { year: "Year TBC", title: "200,000+ lives impacted", text: "Two decades of healing, uplifting and empowering young people on the Cape Flats.", img: "/photos/wellness-spes-bona.webp" },
-  { year: "2026", title: "Life Choices turns 21", text: "Celebrating 21 years and looking ahead to the next generation of young leaders.", img: "/photos/youthcode-laptop.jpg" },
+  { year: "2005", title: "Where it all began", text: "Life Choices is founded in Cape Town to invest in young people.", img: "/timeline/2005.webp", pos: "center 20%" },
+  { year: "2013", title: "Youth voices rise", text: "Young people step up as leaders in their schools and communities.", img: "/timeline/2013.webp" },
+  { year: "2015", title: "Celebrating graduates", text: "Learners mark new skills and certificates with pride.", img: "/timeline/2015.webp" },
+  { year: "2017", title: "A growing family", text: "Our circle of youth, staff and partners keeps growing.", img: "/timeline/2017.webp" },
+  { year: "2019", title: "Conversations that matter", text: "Safe spaces for young people to talk, reflect and grow.", img: "/timeline/2019.webp" },
+  { year: "2021", title: "Milestone coming soon", text: "[Add the 2021 story here.]", img: null },
+  { year: "2026", title: "Milestone coming soon", text: "[Add the 2026 story here.]", img: null },
 ];
 
 export const PARTNERS = ["Department of Social Development", "Community Partner", "Corporate Supporter", "Philanthropic Foundation", "Education Partner", "Health Partner"];

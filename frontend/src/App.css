@@ -23,6 +23,12 @@ body::before {
     radial-gradient(70% 55% at 20% 100%, rgba(171, 204, 55, 0.1) 0%, transparent 70%),
     linear-gradient(180deg, #ffffff 0%, #f8faf3 50%, #f3f7e8 100%);
 }
+.birthday-badge {
+  background: linear-gradient(110deg, #f3f8e3 0%, #ffffff 40%, #fdf3cf 50%, #ffffff 60%, #f3f8e3 100%);
+  background-size: 250% 100%;
+  animation: badge-shine 4s linear infinite;
+}
+@keyframes badge-shine { to { background-position: -250% 0; } }
 .birthday-number {
   background: linear-gradient(120deg, #ABCC37 0%, #F5C542 50%, #ABCC37 100%);
   background-size: 200% auto;

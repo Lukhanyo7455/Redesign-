@@ -8,9 +8,13 @@ const Slide = ({ m, k }) => (
       <span className="relative z-10 h-4 w-4 rounded-full border-4 border-white bg-olive shadow transition-transform duration-500 group-hover:scale-150 group-hover:bg-lime" />
     </div>
     <div className="relative h-52 overflow-hidden rounded-[22px] md:h-64">
-      <img src={m.img} alt={m.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
+      {m.img ? (
+        <img src={m.img} alt={`${m.year} — ${m.title}`} loading="lazy" style={{ objectPosition: m.pos || "center" }} className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
+      ) : (
+        <div className="ph h-full border-2 border-dashed border-olive/30"><span className="ph-label">{m.year} photo coming soon</span></div>
+      )}
     </div>
-    <p className={`font-display mt-6 tracking-tight ${m.year === "Year TBC" ? "text-2xl text-ink/40 md:text-3xl" : "text-4xl text-olive md:text-5xl"}`}>{m.year}</p>
+    <p className="font-display mt-6 text-4xl tracking-tight text-olive md:text-5xl">{m.year}</p>
     <h3 className="font-display mt-3 text-xl tracking-tight md:text-2xl">{m.title}</h3>
     <p className="mt-2 text-sm text-ink/70 md:text-base">{m.text}</p>
   </article>
