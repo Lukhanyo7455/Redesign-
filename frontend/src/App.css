@@ -23,6 +23,7 @@ body::before {
     radial-gradient(70% 55% at 20% 100%, rgba(171, 204, 55, 0.1) 0%, transparent 70%),
     linear-gradient(180deg, #ffffff 0%, #f8faf3 50%, #f3f7e8 100%);
 }
+.impact-figure .text-olive { color: #abcc37; }
 .footer-wordmark { font-family: "Poppins", sans-serif; font-weight: 800; font-style: italic; letter-spacing: -0.04em; line-height: 1.05 !important; padding-bottom: 0.08em; }
 .footer-wordmark .wm-life { color: transparent; -webkit-text-stroke: 2px #abcc37; }
 .footer-wordmark .wm-choices {

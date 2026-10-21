@@ -5,7 +5,7 @@ import "./App.css";
 import { Intro } from "./components/site/Intro";
 import { Nav } from "./components/site/Nav";
 import { Hero } from "./components/site/Hero";
-import { Stats, Vision, Approach, Impact, Stories, Partners, Banner, Involved } from "./components/site/Sections";
+import { Vision, Approach, Impact, Stories, Partners, Banner, Involved } from "./components/site/Sections";
 import { Interventions } from "./components/site/Interventions";
 import { Footer } from "./components/site/Footer";
 import { Timeline } from "./components/site/Timeline";
@@ -32,12 +32,11 @@ function Home() {
     <main>
       <Banner />
       <Hero />
-      <Stats />
+      <Impact />
       <Vision />
       <Timeline />
       <Approach />
       <Interventions />
-      <Impact />
       <Stories />
       <Partners />
       <Involved />

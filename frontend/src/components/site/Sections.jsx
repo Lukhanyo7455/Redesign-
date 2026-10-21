@@ -73,22 +73,46 @@ export const Approach = () => (
   </section>
 );
 
+const DOTS = Array.from({ length: 200 });
+
 export const Impact = () => (
-  <section className="relative overflow-hidden border-t border-ink/10 bg-transparent py-24 text-ink md:py-36" data-testid="impact-section">
-    <div className="container-lc relative z-10 grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
-      <div className="lg:col-span-5">
-        <Reveal><Eyebrow>Measured Impact</Eyebrow></Reveal>
-        <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">Two decades of change on the <em className="font-serif font-normal italic text-olive">Cape Flats.</em></h2></Reveal>
-        <Reveal delay={0.12}><p className="mt-6 max-w-lg text-base text-ink/70 md:text-lg">Since 2005 we have worked in schools, homes and communities to invest in young people, tracking our outcomes openly through annual programme reports.</p></Reveal>
-        <Reveal delay={0.18}><Link to="/impact" data-testid="impact-reports-btn" className="btn-lime group mt-9">See our impact &amp; reports <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
-      </div>
-      <div className="grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-7 lg:border-l lg:border-ink/10 lg:pl-12">
-        {IMPACT.map((s, k) => (
-          <Reveal key={s.label} delay={k * 0.08}>
-            <CountUp value={s.value} suffix={s.suffix} className="font-display text-4xl md:text-6xl" />
-            <p className="mt-2 text-sm text-ink/60">{s.label}</p>
-          </Reveal>
-        ))}
+  <section className="relative py-16 md:py-24" data-testid="impact-section">
+    <div className="container-lc">
+      <div className="grain relative overflow-hidden rounded-[36px] bg-ink px-6 py-14 text-white md:rounded-[48px] md:px-14 md:py-20">
+        <div className="relative z-10 grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <Reveal><Eyebrow light>Measured Impact</Eyebrow></Reveal>
+            <Reveal delay={0.06}>
+              <CountUp value={200000} suffix="+" className="impact-figure block font-display text-[3.4rem] tracking-[-0.04em] sm:text-7xl lg:text-[6.5rem]" />
+            </Reveal>
+            <Reveal delay={0.12}><h2 className="font-display mt-4 text-2xl tracking-tight md:text-3xl">lives touched since 2005.</h2></Reveal>
+            <Reveal delay={0.18}><p className="mt-5 max-w-md text-base text-white/70">Every dot represents a thousand people reached across Cape Town’s schools and communities.</p></Reveal>
+            <Reveal delay={0.24}><Link to="/impact" data-testid="impact-reports-btn" className="btn-lime group mt-8">See our impact &amp; reports <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
+          </div>
+          <div className="lg:col-span-7">
+            <motion.div
+              data-testid="impact-dots"
+              className="grid grid-cols-[repeat(20,minmax(0,1fr))] gap-1.5 md:gap-2.5"
+              initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }}
+              variants={{ show: { transition: { staggerChildren: 0.008 } } }}
+            >
+              {DOTS.map((_, k) => (
+                <motion.span key={k} className={`aspect-square rounded-full ${k % 37 === 0 ? "bg-white" : "bg-lime"}`}
+                  variants={{ hidden: { scale: 0, opacity: 0 }, show: { scale: 1, opacity: 1 } }} transition={{ type: "spring", stiffness: 300, damping: 18 }} />
+              ))}
+            </motion.div>
+            <div className="mt-10 flex flex-wrap gap-3">
+              {IMPACT.slice(1).map((s, k) => (
+                <Reveal key={s.label} delay={0.3 + k * 0.08}>
+                  <div className="flex items-center gap-3 rounded-full border border-white/15 py-2 pl-2 pr-5">
+                    <span className="flex h-11 min-w-11 items-center justify-center rounded-full bg-lime px-3 font-display text-base text-ink"><CountUp value={s.value} suffix={s.suffix} /></span>
+                    <span className="text-sm text-white/80">{s.label}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

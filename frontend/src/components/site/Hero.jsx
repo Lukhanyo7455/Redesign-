@@ -20,22 +20,21 @@ export const Hero = () => {
 
   return (
     <section ref={ref} data-testid="hero-section" className="relative bg-transparent pt-20 text-ink md:pt-28">
-      <div className="container-lc grid grid-cols-1 gap-10 pb-16 lg:grid-cols-12 lg:gap-8 lg:pb-24">
-        <div className="relative z-10 lg:col-span-7 lg:pt-12">
+      <div className="container-lc grid grid-cols-1 items-center gap-10 pb-16 lg:grid-cols-12 lg:gap-12 lg:pb-24">
+        <div className="relative z-10 lg:col-span-5">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: D }} className="eyebrow text-olive">
             Youth development · Cape Town · Since 2005
           </motion.p>
-          <h1 data-testid="hero-heading" className="font-display mt-6 text-[2.5rem] tracking-[-0.03em] sm:text-6xl lg:text-[4.6rem]">
+          <h1 data-testid="hero-heading" className="font-display mt-6 text-[2.4rem] tracking-[-0.03em] sm:text-5xl lg:text-[3.7rem]">
             <MaskLines delay={D + 0.1} lines={[
-              <>Youth is <span className="text-olive">37%</span></>,
-              <>of South Africa,</>,
-              <>yet <em className="font-serif font-normal italic">100%</em> of</>,
-              <>its future.</>,
+              <>The future starts</>,
+              <>with what young</>,
+              <>people can <em className="font-serif italic text-olive">become.</em></>,
             ]} />
           </h1>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: D + 0.7, duration: 0.9 }}>
-            <p className="mt-8 max-w-xl text-base text-ink/70 md:text-lg">
-              Life Choices is an innovative and impactful youth development organisation based in Cape Town. We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.
+            <p data-testid="hero-description" className="mt-8 max-w-xl text-base text-ink/70 md:text-lg">
+              We create pathways for young people to discover their potential, develop practical skills and shape a future full of possibility.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/get-involved" data-testid="hero-support-btn" className="btn-lime group">Support our work <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link>
@@ -44,19 +43,20 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="relative lg:col-span-5" style={{ perspective: 1200 }}>
+        <div className="relative lg:col-span-7" style={{ perspective: 1200 }}>
           <motion.div
             initial={{ clipPath: "inset(100% 0 0 0 round 28px)" }}
             animate={{ clipPath: "inset(0% 0 0 0 round 28px)" }}
             transition={{ duration: 1.4, delay: D - 0.2, ease: [0.76, 0, 0.24, 1] }}
             style={{ rotateY: rot }}
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-[28px] bg-ink lg:mt-16"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-[28px] bg-lime/10"
           >
             <motion.div className="absolute inset-0">
               {HERO_IMAGES.map((src, k) => (
-                <img key={src} src={src} alt="Young people at Life Choices" data-testid={`hero-slide-${k}`}
-                  className="absolute inset-0 h-full w-full object-contain transition-opacity duration-[1400ms]"
-                  style={{ opacity: i === k ? 1 : 0 }} />
+                <div key={src} className="absolute inset-0 transition-opacity duration-[1400ms]" style={{ opacity: i === k ? 1 : 0 }}>
+                  <img src={src} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-70 blur-2xl" />
+                  <img src={src} alt="Young people at Life Choices" data-testid={`hero-slide-${k}`} className="relative h-full w-full object-contain" />
+                </div>
               ))}
             </motion.div>
             <div className="spotlight absolute inset-0" />
