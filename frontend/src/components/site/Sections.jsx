@@ -156,9 +156,9 @@ export const Partners = () => {
       <div className="relative mt-10 overflow-hidden">
         <div className="marquee flex w-max items-center">
           {row.map((p, k) => (
-            <div key={k} data-testid={`partner-logo-${k}`} className="mx-4 flex h-28 w-52 shrink-0 items-center justify-center rounded-2xl bg-white px-6 py-4 shadow-sm md:mx-6 md:h-32 md:w-64">
-              <img src={p.logo} alt={p.name} className={`max-h-full max-w-full object-contain ${p.logo.endsWith(".png") ? "scale-150" : ""}`} />
-            </div>
+            <a key={k} href={p.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${p.name} website`} data-testid={`partner-logo-${k}`} className="group mx-4 flex h-28 w-52 shrink-0 items-center justify-center rounded-2xl bg-white px-6 py-4 shadow-sm transition-[transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-18px_rgba(18,22,15,0.45)] md:mx-6 md:h-32 md:w-64">
+              <img src={p.logo} alt={p.name} className={`max-h-full max-w-full object-contain transition-transform duration-500 ${p.logo.endsWith(".png") ? "scale-150 group-hover:scale-[1.6]" : "group-hover:scale-105"}`} />
+            </a>
           ))}
         </div>
       </div>

@@ -55,9 +55,9 @@ export const TIMELINE = [
 ];
 
 export const PARTNERS = [
-  { name: "Industrial Development Corporation", logo: "/partners/idc.png" },
-  { name: "Don Bosco Mondo", logo: "/partners/don-bosco-mondo.png" },
-  { name: "Argon Asset Management", logo: "/partners/argon.jpg" },
+  { name: "Industrial Development Corporation", logo: "/partners/idc.png", url: "https://www.idc.co.za" },
+  { name: "Don Bosco Mondo", logo: "/partners/don-bosco-mondo.png", url: "https://www.don-bosco-mondo.de" },
+  { name: "Argon Asset Management", logo: "/partners/argon.jpg", url: "https://argonassetmanagement.co.za" },
 ];
 
 export const INVOLVED = [
