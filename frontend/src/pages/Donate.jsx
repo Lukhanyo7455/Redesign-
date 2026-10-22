@@ -165,7 +165,7 @@ export default function DonatePage() {
 
   return (
     <main data-testid="donate-page">
-      <PageBanner short testId="donate-banner" img="/hero/donate-banner.webp" ratio={2000 / 1335} eyebrow="Donate"
+      <PageBanner short pos="center 25%" testId="donate-banner" img="/hero/donate-banner.webp" ratio={2000 / 1335} eyebrow="Donate"
         lines={["Give a young person", "a reason to smile."]}
         text="Your gift creates pathways for young people to discover their potential, develop practical skills and shape a future full of possibility." />
 

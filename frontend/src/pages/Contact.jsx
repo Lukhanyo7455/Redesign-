@@ -42,7 +42,7 @@ export default function ContactPage() {
 
   return (
     <main data-testid="contact-page">
-      <PageBanner short testId="contact-banner" img="/photos/contact-banner.webp" ratio={1194 / 880} eyebrow="Contact us"
+      <PageBanner short pos="center 22%" testId="contact-banner" img="/photos/contact-banner.webp" ratio={1194 / 880} eyebrow="Contact us"
         lines={["Let’s shape the future", "together."]}
         text="Whether you want to partner, volunteer, donate or learn more about our programmes, our team would love to hear from you." />
 

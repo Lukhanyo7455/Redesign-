@@ -54,8 +54,6 @@ body::before {
 .banner-frame-short { aspect-ratio: var(--r); }
 @media (min-width: 768px) {
   .banner-frame-short { aspect-ratio: auto; height: min(calc(100vw / var(--r)), 76vh); min-height: 520px; }
-  .banner-img-short { width: auto !important; aspect-ratio: var(--r); transform-origin: right center;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%); mask-image: linear-gradient(90deg, transparent 0%, #000 22%); }
 }
 .impact-figure .text-olive { color: #abcc37; }
 .footer-wordmark { font-family: "Poppins", sans-serif; font-weight: 800; font-style: italic; letter-spacing: -0.04em; line-height: 1.05 !important; padding-bottom: 0.08em; }

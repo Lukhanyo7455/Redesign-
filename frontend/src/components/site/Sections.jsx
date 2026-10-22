@@ -168,9 +168,9 @@ export const Partners = () => {
 
 export const Banner = () => (
   <PageBanner testId="image-banner" img="/hero/banner.webp" ratio={2000 / 1335} eyebrow="Healing · Uplifting · Empowering" lines={["Ignite the potential", "of every young person."]}>
-    <Reveal delay={1.7}><p data-testid="banner-description" className="mt-6 max-w-xl text-lg font-semibold text-lime md:text-2xl">21 years of investing in South Africa’s youth, from the Cape Flats to the world of work.</p></Reveal>
-    <Reveal delay={1.8}><p className="mt-5 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
-    <Reveal delay={1.9}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-8">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
+    <Reveal delay={1.15}><p data-testid="banner-description" className="mt-6 max-w-xl text-lg font-semibold text-lime md:text-2xl">21 years of investing in South Africa’s youth, from the Cape Flats to the world of work.</p></Reveal>
+    <Reveal delay={1.2}><p className="mt-5 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
+    <Reveal delay={1.25}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-8">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
   </PageBanner>
 );
 
