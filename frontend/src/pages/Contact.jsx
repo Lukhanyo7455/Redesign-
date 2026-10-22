@@ -42,7 +42,7 @@ export default function ContactPage() {
 
   return (
     <main data-testid="contact-page">
-      <PageBanner split testId="contact-banner" img="/photos/contact-banner.webp" ratio={1194 / 880} eyebrow="Contact us"
+      <PageBanner short testId="contact-banner" img="/photos/contact-banner.webp" ratio={1194 / 880} eyebrow="Contact us"
         lines={["Let’s shape the future", "together."]}
         text="Whether you want to partner, volunteer, donate or learn more about our programmes, our team would love to hear from you." />
 
@@ -107,10 +107,6 @@ export default function ContactPage() {
             <div className="relative overflow-hidden rounded-[32px] border border-ink/10">
               <iframe title="Life Choices location map" className="map-frame h-[380px] w-full md:h-[480px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                 src={`https://maps.google.com/maps?q=${encodeURIComponent(ADDRESS)}&z=15&output=embed`} />
-              <div className="pointer-events-none absolute left-4 top-4 flex items-center gap-3 rounded-2xl bg-ink px-4 py-3 text-white shadow-xl md:left-8 md:top-8">
-                <span className="relative flex h-3 w-3"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-75" /><span className="relative inline-flex h-3 w-3 rounded-full bg-lime" /></span>
-                <span className="text-sm font-semibold">Life Choices Campus, Lansdowne</span>
-              </div>
             </div>
           </Reveal>
         </div>

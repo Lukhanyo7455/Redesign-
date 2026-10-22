@@ -22,11 +22,12 @@ const SplitBanner = ({ img, eyebrow, lines, text, testId, ratio, children }) => 
 
 export const PageBanner = ({ split, ...p }) => (split ? <SplitBanner {...p} /> : <FullBanner {...p} />);
 
-const FullBanner = ({ img, eyebrow, lines, text, testId, ratio = 1.5, children }) => (
+const FullBanner = ({ img, eyebrow, lines, text, testId, ratio = 1.5, short, children }) => (
   <section data-testid={testId} className="relative overflow-hidden bg-ink">
-    <div className="banner-frame relative" style={{ "--r": ratio }}>
+    <div className={`${short ? "banner-frame-short" : "banner-frame"} relative`} style={{ "--r": ratio }}>
       <motion.img
-        src={img} alt="" className="absolute inset-0 h-full w-full object-cover"
+        src={img} alt="" data-testid={`${testId}-image`} className={short ? "banner-img-short absolute right-0 top-0 h-full w-full object-cover" : "absolute inset-0 h-full w-full object-cover"}
+        style={short ? { "--r": ratio } : undefined}
         initial={{ scale: 1.06 }} animate={{ scale: 1 }} transition={{ duration: 1.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
       />
       <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/85 via-ink/45 to-transparent md:block" />
