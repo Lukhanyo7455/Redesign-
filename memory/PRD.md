@@ -39,6 +39,12 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - "More confetti" button removed; popup + confetti on every page load
 - Banner lead description added; footer wordmark outlined in lime with hover fill
 
+## Update 6 (2026-10-22)
+- Backend: POST /api/donations (MOCKED demo gateway, card ending 0002 = decline), GET /api/donations/stats (demo goal R210,000), POST /api/contact (stored in Mongo)
+- /get-involved & /donate: banner, 3-step checkout (amount/frequency/programme → details → card) with live 3D card flip, progress bar, confetti + receipt
+- /contact: banner, form, contact details, Google map embed
+- Footer wordmark = original logo (badge + script) as lime outline, fills on hover
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography

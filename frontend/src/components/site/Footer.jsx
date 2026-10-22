@@ -33,10 +33,20 @@ export const Footer = () => (
         <div><p className="text-xs uppercase tracking-widest text-lime">Call</p><a href="tel:+27217614640" className="mt-1 block text-bone/85">+27 21 761 4640</a></div>
       </div>
     </div>
-    <div className="container-lc overflow-hidden border-t border-bone/15 pt-10">
-      <p className="footer-wordmark select-none whitespace-nowrap text-center text-[15vw] xl:text-[200px]" aria-hidden="true">
-        <span className="wm-life">life</span><span className="wm-choices">choices</span>
-      </p>
+    <div className="container-lc overflow-hidden border-t border-bone/15 py-10" data-testid="footer-wordmark">
+      <svg viewBox="0 0 429 99" className="footer-logo-mark mx-auto block w-full max-w-[760px]" role="img" aria-label="Life Choices">
+        <defs>
+          <filter id="lc-outline" x="-5%" y="-5%" width="110%" height="110%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1.2" result="d" />
+            <feComposite in="d" in2="SourceAlpha" operator="out" result="o" />
+            <feFlood floodColor="#ABCC37" />
+            <feComposite in2="o" operator="in" />
+          </filter>
+          <clipPath id="lc-fill"><rect className="footer-logo-fill" x="0" y="0" width="429" height="99" /></clipPath>
+        </defs>
+        <image href="/brand/logo.png" width="429" height="99" filter="url(#lc-outline)" />
+        <image href="/brand/logo.png" width="429" height="99" clipPath="url(#lc-fill)" />
+      </svg>
     </div>
     <div className="container-lc">
       <div className="flex flex-col justify-between gap-2 border-t border-bone/15 py-6 text-xs text-bone/60 md:flex-row md:items-center">

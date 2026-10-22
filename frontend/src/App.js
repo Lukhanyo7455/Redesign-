@@ -9,6 +9,8 @@ import { Vision, Approach, Impact, Stories, Partners, Banner, Involved } from ".
 import { Interventions } from "./components/site/Interventions";
 import { Footer } from "./components/site/Footer";
 import { Timeline } from "./components/site/Timeline";
+import DonatePage from "./pages/Donate";
+import ContactPage from "./pages/Contact";
 import { Celebration } from "./components/site/Celebration";
 
 const useLenis = () => {
@@ -54,6 +56,9 @@ function App() {
         <Celebration />
         <Nav />
         <Routes>
+          <Route path="/get-involved" element={<DonatePage />} />
+          <Route path="/donate" element={<DonatePage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
