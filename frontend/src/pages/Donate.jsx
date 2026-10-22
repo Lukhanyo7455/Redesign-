@@ -20,25 +20,6 @@ const IMPACT = [
 const fmt = (n) => `R${Number(n || 0).toLocaleString("en-ZA")}`;
 const impactFor = (a) => [...IMPACT].reverse().find(([v]) => a >= v)?.[1] ?? "every rand helps a young person move forward.";
 
-const STORY = [
-  ["At home", "Parents and caregivers gain tools to build safe, nurturing families."],
-  ["In school", "Learners build confidence, leadership and the life skills to dream bigger."],
-  ["Into work", "Young people learn coding, digital and work-readiness skills for real careers."],
-];
-
-const Story = () => (
-  <div data-testid="donate-story" className="divide-y divide-ink/10 border-y border-ink/10">
-    {STORY.map(([t, d], k) => (
-      <Reveal key={t} delay={0.08 + k * 0.06}>
-        <div className="group flex items-start gap-5 py-5">
-          <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-lime transition-transform duration-500 group-hover:scale-150" />
-          <div><p className="font-display text-xl">{t}</p><p className="mt-1 text-base text-ink/70">{d}</p></div>
-        </div>
-      </Reveal>
-    ))}
-  </div>
-);
-
 const Steps = ({ step }) => (
   <div className="flex items-center gap-2" data-testid="donate-steps">
     {["Amount", "Details", "Payment"].map((s, k) => (
@@ -189,14 +170,11 @@ export default function DonatePage() {
         text="Your gift creates pathways for young people to discover their potential, develop practical skills and shape a future full of possibility." />
 
       <section className="py-20 md:py-28">
-        <div className="container-lc grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
-            <div className="space-y-8 lg:sticky lg:top-28">
+        <div className="container-lc grid grid-cols-1 items-stretch gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="flex flex-col lg:col-span-5">
               <Reveal><h2 className="font-display text-3xl tracking-tight md:text-5xl">Every gift <em className="italic text-olive">changes a story.</em></h2></Reveal>
-              <Reveal delay={0.04}><p className="text-base text-ink/70 md:text-lg">Your gift reaches young people where they are, helping them heal, grow and move confidently towards the future they choose.</p></Reveal>
-              <Story />
-              <Reveal delay={0.12}><CardPreview f={f} flip={flip} /></Reveal>
-            </div>
+              <Reveal delay={0.04}><p className="mt-6 text-base text-ink/70 md:text-lg">Your gift reaches young people where they are, helping them heal, grow and move confidently towards the future they choose.</p></Reveal>
+              <Reveal delay={0.12} className="mt-10"><CardPreview f={f} flip={flip} /></Reveal>
           </div>
 
           <div className="lg:col-span-7">

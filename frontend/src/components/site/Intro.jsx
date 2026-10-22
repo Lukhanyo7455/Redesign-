@@ -5,7 +5,7 @@ import { MaskLines } from "./Motion";
 export const Intro = () => {
   const [show, setShow] = useState(true);
   useEffect(() => {
-    const t = setTimeout(() => setShow(false), 2300);
+    const t = setTimeout(() => setShow(false), 1300);
     return () => clearTimeout(t);
   }, []);
   return (

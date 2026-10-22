@@ -6,7 +6,7 @@ export const CardPreview = ({ f, flip }) => {
   const n = f.card.replace(/\s/g, "");
   const shown = (n + "•".repeat(16 - n.length)).replace(/(.{4})/g, "$1 ").trim();
   return (
-    <div className="card-scene mx-auto w-full max-w-[420px]" data-testid="card-preview">
+    <div className="card-scene mx-auto w-full max-w-[520px]" data-testid="card-preview">
       <motion.div className="card-3d relative aspect-[1.586] w-full" animate={{ rotateY: flip ? 180 : 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
         <div className="card-face grain absolute inset-0 overflow-hidden rounded-[24px] bg-gradient-to-br from-moss via-ink to-ink p-6 text-white">
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-lime/30 blur-3xl" />

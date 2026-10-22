@@ -61,6 +61,12 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - Section spacing back to py-20/md:py-28; Interventions intro centered, no image, animated underline
 - Footer: "This is not the official Life Choices website."
 
+## Update 9 (2026-10-22)
+- Banners: frame = image aspect ratio, image fills section edge-to-edge (no blur sides, no crop); text reveal ~1s faster (intro 1.3s)
+- Vision image: AI-cleaned version without "2022 Leaders' Quest Annual Report" text
+- Timeline hover hint removed; slides smaller (320px)
+- Donate: bullet points removed, card sits directly under intro, wider
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography

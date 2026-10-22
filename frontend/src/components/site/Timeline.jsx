@@ -3,7 +3,7 @@ import { Reveal } from "./Motion";
 import { Eyebrow } from "./Sections";
 
 const Slide = ({ m, k }) => (
-  <article data-testid={`timeline-slide-${k}`} className="group relative w-[280px] shrink-0 px-3 md:w-[380px] md:px-4">
+  <article data-testid={`timeline-slide-${k}`} className="group relative w-[250px] shrink-0 px-3 md:w-[320px] md:px-4">
     <div className="relative mb-8 flex items-center">
       <span className="relative z-10 h-4 w-4 rounded-full border-4 border-white bg-olive shadow transition-transform duration-500 group-hover:scale-150 group-hover:bg-lime" />
     </div>
@@ -11,9 +11,9 @@ const Slide = ({ m, k }) => (
       <img src={m.img} alt={`${m.year} — ${m.title}`} loading="lazy" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-2xl" aria-hidden="true" />
       <img src={m.img} alt={`${m.year} — ${m.title}`} loading="lazy" className="relative aspect-[4/3] w-full object-contain" />
     </div>
-    <p className="font-display mt-6 text-4xl tracking-tight text-olive md:text-5xl">{m.year}</p>
-    <h3 className="font-display mt-3 text-xl tracking-tight md:text-2xl">{m.title}</h3>
-    <p className="mt-2 text-sm text-ink/70 md:text-base">{m.text}</p>
+    <p className="font-display mt-5 text-3xl tracking-tight text-olive md:text-4xl">{m.year}</p>
+    <h3 className="font-display mt-2 text-lg tracking-tight md:text-xl">{m.title}</h3>
+    <p className="mt-2 text-sm text-ink/70">{m.text}</p>
   </article>
 );
 
@@ -26,7 +26,6 @@ export const Timeline = () => {
           <Reveal><Eyebrow>21 Years · 2005 to 2026</Eyebrow></Reveal>
           <Reveal delay={0.06}><h2 className="font-display text-3xl tracking-tight md:text-5xl">Our story, <em className="italic text-olive">one milestone at a time.</em></h2></Reveal>
         </div>
-        <Reveal delay={0.1}><p className="max-w-sm text-base text-ink/70">Hover to pause the journey and take a closer look at each chapter.</p></Reveal>
       </div>
       <div className="relative mt-12">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#f8faf3] to-transparent md:w-32" />

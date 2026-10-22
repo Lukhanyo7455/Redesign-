@@ -25,7 +25,7 @@ export const Stats = () => (
 export const Vision = () => (
   <section className="relative bg-transparent py-20 md:py-28" data-testid="vision-section">
     <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
-      <Reveal className="lg:col-span-7"><Placeholder label="Young people at Life Choices" src="/photos/lq-2022-cover.jpg" className="aspect-[1280/792] w-full rounded-[28px] lg:aspect-auto lg:h-full lg:min-h-[420px]" /></Reveal>
+      <Reveal className="lg:col-span-7"><Placeholder label="Young people at Life Choices" src="/photos/vision.webp" className="aspect-[1264/848] w-full rounded-[28px] lg:aspect-auto lg:h-full lg:min-h-[420px]" /></Reveal>
       <div className="flex flex-col justify-center lg:col-span-5">
         <Reveal><Eyebrow>Our Vision</Eyebrow></Reveal>
         <Reveal delay={0.06}><p className="text-lg text-ink/60">Life Choices is working towards a world where…</p></Reveal>
@@ -168,9 +168,9 @@ export const Partners = () => {
 
 export const Banner = () => (
   <PageBanner testId="image-banner" img="/hero/banner.webp" ratio={2000 / 1335} eyebrow="Healing · Uplifting · Empowering" lines={["Ignite the potential", "of every young person."]}>
-    <Reveal delay={2.8}><p data-testid="banner-description" className="mt-6 max-w-xl text-lg font-semibold text-lime md:text-2xl">21 years of investing in South Africa’s youth, from the Cape Flats to the world of work.</p></Reveal>
-    <Reveal delay={2.9}><p className="mt-5 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
-    <Reveal delay={3.0}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-8">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
+    <Reveal delay={1.7}><p data-testid="banner-description" className="mt-6 max-w-xl text-lg font-semibold text-lime md:text-2xl">21 years of investing in South Africa’s youth, from the Cape Flats to the world of work.</p></Reveal>
+    <Reveal delay={1.8}><p className="mt-5 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
+    <Reveal delay={1.9}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-8">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
   </PageBanner>
 );
 

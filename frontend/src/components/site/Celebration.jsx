@@ -25,7 +25,7 @@ export const Celebration = () => {
     return () => window.removeEventListener("lc21-open", openIt);
   }, []);
   useEffect(() => {
-    const t = setTimeout(() => { setOpen(true); burst(); }, 2700);
+    const t = setTimeout(() => { setOpen(true); burst(); }, 3000);
     return () => clearTimeout(t);
   }, []);
 
