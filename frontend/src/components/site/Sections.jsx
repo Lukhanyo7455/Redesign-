@@ -23,7 +23,7 @@ export const Stats = () => (
 );
 
 export const Vision = () => (
-  <section className="relative bg-transparent py-20 md:py-28" data-testid="vision-section">
+  <section className="relative bg-transparent py-14 md:py-28" data-testid="vision-section">
     <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
       <Reveal className="lg:col-span-7"><Placeholder label="Young people at Life Choices" src="/photos/vision.webp" className="aspect-[1264/848] w-full rounded-[28px] lg:aspect-auto lg:h-full lg:min-h-[420px]" /></Reveal>
       <div className="flex flex-col justify-center lg:col-span-5">
@@ -47,7 +47,7 @@ export const Vision = () => (
 );
 
 export const Approach = () => (
-  <section className="relative bg-lime/10 py-20 md:py-28" data-testid="approach-section">
+  <section className="relative bg-lime/10 py-14 md:py-28" data-testid="approach-section">
     <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
       <div className="flex flex-col lg:col-span-5">
           <Reveal><Eyebrow>Our Approach</Eyebrow></Reveal>
@@ -117,7 +117,7 @@ export const Impact = () => (
 );
 
 export const Stories = () => (
-  <section className="bg-transparent py-20 md:py-28" data-testid="stories-section">
+  <section className="bg-transparent py-14 md:py-28" data-testid="stories-section">
     <div className="container-lc">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
@@ -174,7 +174,7 @@ export const Banner = () => (
 );
 
 export const Involved = () => (
-  <section className="bg-transparent py-20 md:py-28" data-testid="involved-section">
+  <section className="bg-transparent py-14 md:py-28" data-testid="involved-section">
     <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
       <div className="flex flex-col lg:col-span-5">
         <Reveal><Eyebrow>Get Involved</Eyebrow></Reveal>

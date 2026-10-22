@@ -55,6 +55,7 @@ function App() {
         <Intro />
         <Celebration />
         <Nav />
+        <div className="h-[60px] lg:hidden" aria-hidden="true" />
         <Routes>
           <Route path="/get-involved" element={<DonatePage />} />
           <Route path="/donate" element={<DonatePage />} />

@@ -20,7 +20,7 @@ const Slide = ({ m, k }) => (
 export const Timeline = () => {
   const loop = [...TIMELINE, ...TIMELINE];
   return (
-    <section className="relative overflow-hidden py-20 md:py-28" data-testid="timeline-section">
+    <section className="relative overflow-hidden py-14 md:py-28" data-testid="timeline-section">
       <div className="container-lc flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
           <Reveal><Eyebrow>21 Years · 2005 to 2026</Eyebrow></Reveal>
