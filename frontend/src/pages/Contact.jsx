@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Mail, Phone, Clock, Send, Check } from "lucide-react";
+import { MapPin, Mail, Phone, Send, Check } from "lucide-react";
 import { PageBanner } from "../components/site/PageBanner";
 import { Reveal } from "../components/site/Motion";
 
@@ -14,7 +14,6 @@ const DETAILS = [
   { icon: MapPin, label: "Visit", value: ADDRESS, href: `https://maps.google.com/?q=${encodeURIComponent(ADDRESS)}` },
   { icon: Mail, label: "Email", value: "info@lifechoices.co.za", href: "mailto:info@lifechoices.co.za" },
   { icon: Phone, label: "Call", value: "+27 21 761 4640", href: "tel:+27217614640" },
-  { icon: Clock, label: "Office hours", value: "[Add office hours]" },
 ];
 
 const Input = ({ label, testId, area, ...p }) => (
@@ -43,11 +42,11 @@ export default function ContactPage() {
 
   return (
     <main data-testid="contact-page">
-      <PageBanner testId="contact-banner" img="/photos/contact-banner.webp" pos="center 25%" eyebrow="Contact us"
+      <PageBanner testId="contact-banner" img="/photos/contact-banner.webp" ratio={1194 / 880} eyebrow="Contact us"
         lines={["Let’s shape the future", "together."]}
         text="Whether you want to partner, volunteer, donate or learn more about our programmes, our team would love to hear from you." />
 
-      <section className="py-14 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container-lc grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal><p className="eyebrow mb-5 text-olive">Get in touch</p></Reveal>
@@ -102,7 +101,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="pb-14 md:pb-20" data-testid="contact-map">
+      <section className="pb-20 md:pb-28" data-testid="contact-map">
         <div className="container-lc">
           <Reveal>
             <div className="relative overflow-hidden rounded-[32px] border border-ink/10">

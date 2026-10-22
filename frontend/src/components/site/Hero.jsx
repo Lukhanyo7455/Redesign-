@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { MaskLines } from "./Motion";
 
 const D = 0.2;
-const IMG = "/photos/youthcode-laptop.jpg";
+const IMG = "/hero/hero1.webp";
 
 export const Hero = () => {
   const ref = useRef(null);
@@ -13,8 +13,8 @@ export const Hero = () => {
   const rot = useTransform(scrollYProgress, [0, 1], [0, -6]);
 
   return (
-    <section ref={ref} data-testid="hero-section" className="relative bg-transparent pt-16 text-ink md:pt-20">
-      <div className="container-lc grid grid-cols-1 items-stretch gap-10 pb-12 lg:grid-cols-12 lg:gap-12 lg:pb-16">
+    <section ref={ref} data-testid="hero-section" className="relative bg-transparent pt-20 text-ink md:pt-28">
+      <div className="container-lc grid grid-cols-1 items-stretch gap-10 pb-20 lg:grid-cols-12 lg:gap-12 lg:pb-28">
         <div className="relative z-10 flex flex-col justify-center lg:col-span-5">
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: D }} className="eyebrow text-olive">
             Youth development · Cape Town · Since 2005

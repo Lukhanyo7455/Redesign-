@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { STATS, APPROACH, IMPACT, STORIES, PARTNERS, INVOLVED } from "../../data/site";
-import { Reveal, CountUp, Placeholder, MaskLines } from "./Motion";
+import { Reveal, CountUp, Placeholder } from "./Motion";
+import { PageBanner } from "./PageBanner";
 
 export const Eyebrow = ({ children, light }) => (
   <p className={`eyebrow mb-6 ${light ? "text-lime" : "text-olive"}`}>{children}</p>
@@ -22,9 +23,9 @@ export const Stats = () => (
 );
 
 export const Vision = () => (
-  <section className="relative bg-transparent py-14 md:py-20" data-testid="vision-section">
+  <section className="relative bg-transparent py-20 md:py-28" data-testid="vision-section">
     <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
-      <Reveal className="lg:col-span-7"><Placeholder label="Young people at Life Choices" src="/hero/hero1.webp" className="aspect-[1280/792] w-full rounded-[28px] lg:aspect-auto lg:h-full lg:min-h-[420px]" /></Reveal>
+      <Reveal className="lg:col-span-7"><Placeholder label="Young people at Life Choices" src="/photos/lq-2022-cover.jpg" className="aspect-[1280/792] w-full rounded-[28px] lg:aspect-auto lg:h-full lg:min-h-[420px]" /></Reveal>
       <div className="flex flex-col justify-center lg:col-span-5">
         <Reveal><Eyebrow>Our Vision</Eyebrow></Reveal>
         <Reveal delay={0.06}><p className="text-lg text-ink/60">Life Choices is working towards a world where…</p></Reveal>
@@ -47,7 +48,7 @@ export const Vision = () => (
 );
 
 export const Approach = () => (
-  <section className="relative bg-lime/10 py-14 md:py-20" data-testid="approach-section">
+  <section className="relative bg-lime/10 py-20 md:py-28" data-testid="approach-section">
     <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
       <div className="flex flex-col lg:col-span-5">
           <Reveal><Eyebrow>Our Approach</Eyebrow></Reveal>
@@ -117,7 +118,7 @@ export const Impact = () => (
 );
 
 export const Stories = () => (
-  <section className="bg-transparent py-14 md:py-20" data-testid="stories-section">
+  <section className="bg-transparent py-20 md:py-28" data-testid="stories-section">
     <div className="container-lc">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
@@ -166,33 +167,15 @@ export const Partners = () => {
 };
 
 export const Banner = () => (
-  <section data-testid="image-banner" className="relative overflow-hidden">
-    <div className="relative h-[100svh] min-h-[640px] max-h-[960px]">
-      <motion.img
-        src="/hero/banner.webp" alt="Learners from a Life Choices programme"
-        className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
-        initial={{ scale: 1.15 }} animate={{ scale: 1 }}
-        transition={{ duration: 2.4, delay: 1.8, ease: [0.22, 1, 0.36, 1] }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/50 to-ink/10" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/60 to-transparent" />
-      <div className="container-lc relative flex h-full items-end pb-16 pt-28 md:items-center md:pb-0">
-        <div className="max-w-2xl text-white">
-          <Reveal delay={2.4}><p className="eyebrow mb-6 text-lime">Healing · Uplifting · Empowering</p></Reveal>
-          <h2 className="font-display text-4xl tracking-tight md:text-6xl lg:text-7xl">
-            <MaskLines delay={2.5} lines={["Ignite the potential", "of every young person."]} />
-          </h2>
-          <Reveal delay={2.8}><p data-testid="banner-description" className="mt-6 max-w-xl text-lg font-semibold text-lime md:text-2xl">21 years of investing in South Africa’s youth, from the Cape Flats to the world of work.</p></Reveal>
-          <Reveal delay={2.9}><p className="mt-6 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
-          <Reveal delay={3.0}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-9">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageBanner testId="image-banner" img="/hero/banner.webp" ratio={2000 / 1335} eyebrow="Healing · Uplifting · Empowering" lines={["Ignite the potential", "of every young person."]}>
+    <Reveal delay={2.8}><p data-testid="banner-description" className="mt-6 max-w-xl text-lg font-semibold text-lime md:text-2xl">21 years of investing in South Africa’s youth, from the Cape Flats to the world of work.</p></Reveal>
+    <Reveal delay={2.9}><p className="mt-5 max-w-lg text-base text-white/85 md:text-lg">We work in schools, communities and from our Campus in Lansdowne, investing in young people so they can reach their potential.</p></Reveal>
+    <Reveal delay={3.0}><Link to="/interventions" data-testid="banner-programmes-btn" className="btn-lime group mt-8">Explore our programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
+  </PageBanner>
 );
 
 export const Involved = () => (
-  <section className="bg-transparent py-14 md:py-20" data-testid="involved-section">
+  <section className="bg-transparent py-20 md:py-28" data-testid="involved-section">
     <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
       <div className="flex flex-col lg:col-span-5">
         <Reveal><Eyebrow>Get Involved</Eyebrow></Reveal>

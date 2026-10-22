@@ -54,6 +54,13 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - Donate: goal/progress removed, new 3-point narrative, no "demo" wording, heart icon removed, R2,100 → R2,000
 - Footer credit: "Redesigned prototype by Lukhanyo Mdunyelwa"
 
+## Update 8 (2026-10-22)
+- Academy = 4 students w/ certificates; laptop-lady removed from homepage; hero = group photo (was Vision); Vision = LQ 2022 cover
+- Nurturing story = new LQ group photo; all "[placeholder]" text removed (story excerpts, office hours)
+- Banners (home/donate/contact) zoomed out, never cropped (contain + blurred fill; text below image on mobile)
+- Section spacing back to py-20/md:py-28; Interventions intro centered, no image, animated underline
+- Footer: "This is not the official Life Choices website."
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography

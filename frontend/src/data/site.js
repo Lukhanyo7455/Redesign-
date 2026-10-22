@@ -28,7 +28,7 @@ export const INTERVENTIONS = [
   { slug: "family-affairs", img: "/photos/family-affairs.webp", name: "Family Affairs", pillar: "Family Stability", text: "Positive parenting workshops, one-on-one counselling and ongoing support circles that help families thrive.", tags: ["Parenting workshops", "Counselling", "Support circles"] },
   { slug: "health4life", img: "/photos/health4life-team.jpg", name: "Health4Life", pillar: "Health & Wellbeing", text: "Health information, counselling and psychosocial support delivered in partnership with schools and communities.", tags: ["Health information", "Psychosocial support", "School partnerships"] },
   { slug: "leaders-quest", img: "/photos/leaders-quest-museum.webp", name: "Leaders’ Quest", pillar: "Leadership & Life Skills", text: "After-school leadership and life-skills training, coaching and experiential learning across Cape Town high schools.", tags: ["After-school training", "Coaching", "Experiential learning"] },
-  { slug: "life-choices-academy", img: "/photos/academy-certificates.jpg", name: "Life Choices Academy", pillar: "Coding & Digital Skills", text: "Coding courses, digital skills and work-readiness training, including the YouthCode Project, that prepare young people for careers in tech and beyond.", tags: ["Coding courses", "Digital skills", "YouthCode Project", "Work-readiness"] },
+  { slug: "life-choices-academy", img: "/photos/youthcode-laptop.jpg", name: "Life Choices Academy", pillar: "Coding & Digital Skills", text: "Coding courses, digital skills and work-readiness training, including the YouthCode Project, that prepare young people for careers in tech and beyond.", tags: ["Coding courses", "Digital skills", "YouthCode Project", "Work-readiness"] },
 ];
 
 export const IMPACT = [
@@ -39,9 +39,9 @@ export const IMPACT = [
 ];
 
 export const STORIES = [
-  { slug: "nurturing-the-leader-within", img: "/photos/lq-2022-cover.jpg", tag: "Leaders’ Quest", date: "May 2025", title: "Nurturing the Leader Within", text: "How one learner discovered the confidence to speak, lead and imagine a bigger future. [Placeholder excerpt for prototype.]" },
-  { slug: "rebuilding-relationships", img: "/hero/hero2.webp", tag: "Family Affairs", date: "April 2025", title: "Rebuilding Relationships", text: "A caregiver rebuilds trust at home after joining a positive parenting support circle. [Placeholder excerpt for prototype.]" },
-  { slug: "a-beacon-of-love", img: "/hero/donate-banner.webp", tag: "Family Affairs", date: "March 2025", title: "A Beacon of Love", text: "Finding strength and community through counselling and connection. [Placeholder excerpt for prototype.]" },
+  { slug: "nurturing-the-leader-within", img: "/photos/nurturing-leader.webp", tag: "Leaders’ Quest", date: "May 2025", title: "Nurturing the Leader Within", text: "How one learner discovered the confidence to speak, lead and imagine a bigger future." },
+  { slug: "rebuilding-relationships", img: "/hero/hero2.webp", tag: "Family Affairs", date: "April 2025", title: "Rebuilding Relationships", text: "A caregiver rebuilds trust at home after joining a positive parenting support circle." },
+  { slug: "a-beacon-of-love", img: "/hero/donate-banner.webp", tag: "Family Affairs", date: "March 2025", title: "A Beacon of Love", text: "Finding strength and community through counselling and connection." },
 ];
 
 export const TIMELINE = [

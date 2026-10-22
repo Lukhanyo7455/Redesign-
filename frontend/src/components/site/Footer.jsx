@@ -50,7 +50,7 @@ export const Footer = () => (
     </div>
     <div className="container-lc">
       <div className="flex flex-col justify-between gap-2 border-t border-bone/15 py-6 text-xs text-bone/60 md:flex-row md:items-center">
-        <span>© 2026 Life Choices. Redesigned prototype by Lukhanyo Mdunyelwa.</span>
+        <span>© 2026 Life Choices. Redesigned prototype by Lukhanyo Mdunyelwa. This is not the official Life Choices website.</span>
         <span>Registered NPO · PBO · Cape Town, South Africa</span>
       </div>
     </div>

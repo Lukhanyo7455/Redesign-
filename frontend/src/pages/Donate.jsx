@@ -184,11 +184,11 @@ export default function DonatePage() {
 
   return (
     <main data-testid="donate-page">
-      <PageBanner testId="donate-banner" img="/hero/donate-banner.webp" pos="center 30%" eyebrow="Donate"
+      <PageBanner testId="donate-banner" img="/hero/donate-banner.webp" ratio={2000 / 1335} eyebrow="Donate"
         lines={["Give a young person", "a reason to smile."]}
         text="Your gift creates pathways for young people to discover their potential, develop practical skills and shape a future full of possibility." />
 
-      <section className="py-14 md:py-20">
+      <section className="py-20 md:py-28">
         <div className="container-lc grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="space-y-8 lg:sticky lg:top-28">

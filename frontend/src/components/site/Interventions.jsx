@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { INTERVENTIONS } from "../../data/site";
 import { Reveal, Placeholder } from "./Motion";
-import { Eyebrow } from "./Sections";
 
 const Row = ({ it }) => (
-  <div data-testid={`intervention-${it.slug}`} className="grid grid-cols-1 items-stretch gap-8 border-t border-ink/10 py-10 md:py-14 lg:grid-cols-12 lg:gap-14">
+  <div data-testid={`intervention-${it.slug}`} className="grid grid-cols-1 items-stretch gap-8 border-t border-ink/10 py-14 md:py-20 lg:grid-cols-12 lg:gap-14">
     <Reveal className="lg:order-2 lg:col-span-6">
       <div className="relative h-full overflow-hidden rounded-[28px]">
         <Placeholder label={`${it.name} programme photo`} src={it.img} className="aspect-[4/3] w-full lg:aspect-auto lg:h-full lg:min-h-[380px]" />
@@ -32,18 +32,15 @@ const Row = ({ it }) => (
 );
 
 export const Interventions = () => (
-  <section className="relative bg-transparent py-14 text-ink md:py-20" data-testid="interventions-section">
+  <section className="relative bg-transparent py-20 text-ink md:py-28" data-testid="interventions-section">
     <div className="container-lc relative z-10">
-      <div className="grid grid-cols-1 items-stretch gap-8 pb-10 lg:grid-cols-12 lg:gap-14 md:pb-14">
-        <div className="flex flex-col justify-center lg:col-span-6">
-          <Reveal><Eyebrow>Our Interventions</Eyebrow></Reveal>
-          <Reveal delay={0.06}><h2 className="font-display text-3xl tracking-tight md:text-5xl">Programmes that meet young people <em className="font-serif font-normal italic text-olive">where they are.</em></h2></Reveal>
-          <Reveal delay={0.1}><p className="mt-6 max-w-lg text-base text-ink/70 md:text-lg">Four connected programmes support young people at home, in school, in their health and on the road to work.</p></Reveal>
-          <Reveal delay={0.14}><Link to="/interventions" data-testid="interventions-all-link" className="link-arrow group mt-8 self-start text-ink">View all programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
-        </div>
-        <Reveal className="lg:col-span-6">
-          <Placeholder label="Young people learning on laptops at Life Choices" src="/photos/interventions.webp" className="aspect-[4/3] w-full rounded-[28px] lg:aspect-auto lg:h-full lg:min-h-[360px]" />
-        </Reveal>
+      <div className="mx-auto flex max-w-3xl flex-col items-center pb-14 text-center md:pb-20" data-testid="interventions-intro">
+        <Reveal><p className="eyebrow mb-6 text-olive">Our Interventions</p></Reveal>
+        <Reveal delay={0.06}><h2 className="font-display text-3xl tracking-tight md:text-5xl lg:text-6xl">Programmes that meet young people <em className="font-serif font-normal italic text-olive">where they are.</em></h2></Reveal>
+        <motion.span aria-hidden="true" className="mt-8 block h-[3px] w-28 origin-center rounded-full bg-lime"
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} />
+        <Reveal delay={0.14}><p className="mt-8 max-w-xl text-base text-ink/70 md:text-lg">Four connected programmes support young people at home, in school, in their health and on the road to work.</p></Reveal>
+        <Reveal delay={0.2}><Link to="/interventions" data-testid="interventions-all-link" className="link-arrow group mt-8 text-ink">View all programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
       </div>
       {INTERVENTIONS.map((it) => <Row key={it.slug} it={it} />)}
     </div>
