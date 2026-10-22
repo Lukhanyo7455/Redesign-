@@ -1,42 +1,43 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import axios from "axios";
 import confetti from "canvas-confetti";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, Check, Lock, Heart, Repeat, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Lock, ShieldCheck } from "lucide-react";
 import { PageBanner } from "../components/site/PageBanner";
 import { Reveal } from "../components/site/Motion";
 import { CardPreview } from "../components/donate/CardPreview";
 
 const API = process.env.REACT_APP_BACKEND_URL ? `${process.env.REACT_APP_BACKEND_URL}/api` : null;
-const AMOUNTS = [100, 250, 500, 1000, 2100];
+const AMOUNTS = [100, 250, 500, 1000, 2000];
 const PROGRAMMES = ["Where needed most", "Family Affairs", "Health4Life", "Leaders’ Quest", "Life Choices Academy"];
 const IMPACT = [
   [100, "could help provide learning materials for a young person."],
   [250, "could help fund a life-skills workshop session."],
   [500, "could help support a family through a parenting support circle."],
   [1000, "could help a learner through a term of leadership coaching."],
-  [2100, "a birthday gift: R100 for every year of Life Choices."],
+  [2000, "could help open the door to coding and digital skills training."],
 ];
 const fmt = (n) => `R${Number(n || 0).toLocaleString("en-ZA")}`;
 const impactFor = (a) => [...IMPACT].reverse().find(([v]) => a >= v)?.[1] ?? "every rand helps a young person move forward.";
 
-const Progress = ({ stats }) => {
-  const pct = Math.min(100, ((stats?.total ?? 0) / (stats?.goal || 1)) * 100);
-  return (
-    <div data-testid="donation-progress" className="rounded-[28px] border border-ink/10 bg-white/70 p-6 backdrop-blur md:p-8">
-      <div className="flex items-end justify-between gap-4">
-        <div>
-          <p className="eyebrow text-olive">21st birthday campaign · demo</p>
-          <p className="font-display mt-2 text-3xl md:text-4xl">{fmt(stats?.total)}</p>
+const STORY = [
+  ["At home", "Parents and caregivers gain tools to build safe, nurturing families."],
+  ["In school", "Learners build confidence, leadership and the life skills to dream bigger."],
+  ["Into work", "Young people learn coding, digital and work-readiness skills for real careers."],
+];
+
+const Story = () => (
+  <div data-testid="donate-story" className="divide-y divide-ink/10 border-y border-ink/10">
+    {STORY.map(([t, d], k) => (
+      <Reveal key={t} delay={0.08 + k * 0.06}>
+        <div className="group flex items-start gap-5 py-5">
+          <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-lime transition-transform duration-500 group-hover:scale-150" />
+          <div><p className="font-display text-xl">{t}</p><p className="mt-1 text-base text-ink/70">{d}</p></div>
         </div>
-        <p className="text-right text-sm text-ink/60">of {fmt(stats?.goal)} goal<br />{stats?.count ?? 0} gifts</p>
-      </div>
-      <div className="mt-5 h-3 overflow-hidden rounded-full bg-ink/10">
-        <motion.div className="progress-shine h-full rounded-full bg-lime" initial={{ width: 0 }} animate={{ width: `${Math.max(pct, 1.5)}%` }} transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }} />
-      </div>
-    </div>
-  );
-};
+      </Reveal>
+    ))}
+  </div>
+);
 
 const Steps = ({ step }) => (
   <div className="flex items-center gap-2" data-testid="donate-steps">
@@ -61,10 +62,10 @@ const Field = ({ label, testId, ...p }) => (
 const AmountStep = ({ f, set }) => (
   <div className="space-y-8">
     <div className="inline-flex rounded-full bg-ink/5 p-1" data-testid="frequency-toggle">
-      {[["once", "One-off", Heart], ["monthly", "Monthly", Repeat]].map(([v, l, I]) => (
+      {[["once", "One-off"], ["monthly", "Monthly"]].map(([v, l]) => (
         <button key={v} type="button" data-testid={`frequency-${v}`} onClick={() => set({ frequency: v })} className="relative flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold">
           {f.frequency === v && <motion.span layoutId="freq" className="absolute inset-0 rounded-full bg-ink" transition={{ type: "spring", stiffness: 400, damping: 30 }} />}
-          <I className={`relative h-4 w-4 ${f.frequency === v ? "text-lime" : ""}`} /><span className={`relative ${f.frequency === v ? "text-white" : "text-ink/70"}`}>{l}</span>
+          <span className={`relative ${f.frequency === v ? "text-white" : "text-ink/70"}`}>{l}</span>
         </button>
       ))}
     </div>
@@ -73,7 +74,6 @@ const AmountStep = ({ f, set }) => (
         <motion.button key={a} type="button" whileTap={{ scale: 0.94 }} data-testid={`amount-${a}`} onClick={() => set({ amount: a, custom: "" })}
           className={`amount-chip ${f.amount === a && !f.custom ? "is-active" : ""}`}>
           <span className="font-display text-2xl">{fmt(a)}</span>
-          {a === 2100 && <span className="mt-1 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-widest"><Sparkles className="h-3 w-3" /> 21 years</span>}
         </motion.button>
       ))}
       <label className={`amount-chip cursor-text ${f.custom ? "is-active" : ""}`}>
@@ -106,7 +106,7 @@ const DetailsStep = ({ f, set }) => (
     <Field label="Full name" testId="donor-name" value={f.name} onChange={(e) => set({ name: e.target.value })} placeholder="Your name" />
     <Field label="Email" testId="donor-email" type="email" value={f.email} onChange={(e) => set({ email: e.target.value })} placeholder="you@example.com" />
     <label className="block">
-      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-ink/60">Birthday message (optional)</span>
+      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-ink/60">Message (optional)</span>
       <textarea data-testid="donor-message" rows={3} maxLength={300} value={f.message} onChange={(e) => set({ message: e.target.value })} placeholder="Leave a note for the Life Choices team" className="lc-input resize-none" />
     </label>
   </div>
@@ -123,9 +123,9 @@ const PaymentStep = ({ f, set, onFocusCvc }) => (
       <Field label="CVC" testId="card-cvc" inputMode="numeric" value={f.cvc} placeholder="123"
         onFocus={() => onFocusCvc(true)} onBlur={() => onFocusCvc(false)} onChange={(e) => set({ cvc: e.target.value.replace(/\D/g, "").slice(0, 4) })} />
     </div>
-    <p className="flex items-start gap-2 rounded-2xl border border-dashed border-olive/40 bg-lime/10 px-4 py-3 text-sm text-ink/75" data-testid="demo-notice">
+    <p className="flex items-start gap-2 rounded-2xl border border-dashed border-olive/40 bg-lime/10 px-4 py-3 text-sm text-ink/75" data-testid="checkout-notice">
       <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-olive" />
-      Demo payment: no real money is charged. Use any card number; one ending in 0002 shows a declined payment.
+      This is a prototype checkout, so no real money is charged. Use any card number; one ending in 0002 shows a declined payment.
     </p>
   </div>
 );
@@ -140,7 +140,7 @@ const Success = ({ res, onReset }) => (
     <div className="mx-auto mt-8 max-w-sm rounded-2xl border border-ink/10 bg-white p-5 text-left text-sm">
       <div className="flex justify-between py-1.5"><span className="text-ink/60">Reference</span><span data-testid="donation-reference" className="font-semibold">{res.reference}</span></div>
       <div className="flex justify-between py-1.5"><span className="text-ink/60">Card</span><span>•••• {res.card_last4}</span></div>
-      <div className="flex justify-between py-1.5"><span className="text-ink/60">Status</span><span className="font-semibold text-olive">Paid (demo)</span></div>
+      <div className="flex justify-between py-1.5"><span className="text-ink/60">Status</span><span className="font-semibold text-olive">Paid</span></div>
     </div>
     <button data-testid="donate-again-btn" onClick={onReset} className="btn-ghost btn-ghost-dark mt-8">Make another gift</button>
   </motion.div>
@@ -155,11 +155,7 @@ export default function DonatePage() {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [res, setRes] = useState(null);
-  const [stats, setStats] = useState(null);
   const set = (p) => { setErr(""); setF((s) => ({ ...s, ...p })); };
-
-  const loadStats = () => { if (API) axios.get(`${API}/donations/stats`).then((r) => setStats(r.data)).catch(() => {}); };
-  useEffect(() => { loadStats(); }, []);
 
   const valid = useMemo(() => [
     f.amount >= 10,
@@ -178,7 +174,6 @@ export default function DonatePage() {
       await new Promise((r) => setTimeout(r, 900));
       setRes(data);
       confetti({ particleCount: 160, spread: 110, origin: { y: 0.6 }, colors: ["#ABCC37", "#4A6130", "#F5C542", "#FFFFFF"], zIndex: 120 });
-      loadStats();
     } catch (e) {
       setErr(e?.response?.data?.detail?.toString?.() || "Payment failed. Please try again.");
     } finally { setBusy(false); }
@@ -189,16 +184,17 @@ export default function DonatePage() {
 
   return (
     <main data-testid="donate-page">
-      <PageBanner testId="donate-banner" img="/hero/donate-banner.webp" pos="center 30%" eyebrow="Donate · Celebrating 21 years"
+      <PageBanner testId="donate-banner" img="/hero/donate-banner.webp" pos="center 30%" eyebrow="Donate"
         lines={["Give a young person", "a reason to smile."]}
         text="Your gift creates pathways for young people to discover their potential, develop practical skills and shape a future full of possibility." />
 
-      <section className="py-20 md:py-28">
+      <section className="py-14 md:py-20">
         <div className="container-lc grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="space-y-8 lg:sticky lg:top-28">
               <Reveal><h2 className="font-display text-3xl tracking-tight md:text-5xl">Every gift <em className="italic text-olive">changes a story.</em></h2></Reveal>
-              <Reveal delay={0.06}><Progress stats={stats} /></Reveal>
+              <Reveal delay={0.04}><p className="text-base text-ink/70 md:text-lg">Your gift reaches young people where they are, helping them heal, grow and move confidently towards the future they choose.</p></Reveal>
+              <Story />
               <Reveal delay={0.12}><CardPreview f={f} flip={flip} /></Reveal>
             </div>
           </div>
@@ -209,7 +205,7 @@ export default function DonatePage() {
                 <>
                   <div className="flex flex-wrap items-center justify-between gap-4">
                     <Steps step={step} />
-                    <span className="flex items-center gap-1.5 text-xs text-ink/60"><Lock className="h-3.5 w-3.5" /> Secure demo checkout</span>
+                    <span className="flex items-center gap-1.5 text-xs text-ink/60"><Lock className="h-3.5 w-3.5" /> Secure checkout</span>
                   </div>
                   <div className="relative mt-8 min-h-[380px]">
                     <AnimatePresence initial={false}>

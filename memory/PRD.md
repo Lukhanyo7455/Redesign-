@@ -45,6 +45,15 @@ React (CRA) frontend only: framer-motion, lenis. Components in src/components/si
 - /contact: banner, form, contact details, Google map embed
 - Footer wordmark = original logo (badge + script) as lime outline, fills on hover
 
+## Update 7 (2026-10-22)
+- New client photos: Family Affairs, Leaders' Quest (museum), Get Involved, Contact banner, Interventions header (brightened)
+- No repeated images on homepage; hero = single image (YouthCode grads), spinning badge removed
+- Image+text pairs stretch to equal height; images uncropped (contain + blurred fill); banners remain cover
+- All green text = brand #ABCC37; tighter section spacing (py-14/md:py-20)
+- Academy copy emphasises coding courses / YouthCode
+- Donate: goal/progress removed, new 3-point narrative, no "demo" wording, heart icon removed, R2,100 → R2,000
+- Footer credit: "Redesigned prototype by Lukhanyo Mdunyelwa"
+
 ## Backlog
 - P1: Inner pages (About, Interventions detail, Stories, Contact, Get Involved)
 - P2: Replace image placeholders with real photography

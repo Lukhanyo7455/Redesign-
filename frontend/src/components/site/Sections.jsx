@@ -22,20 +22,20 @@ export const Stats = () => (
 );
 
 export const Vision = () => (
-  <section className="relative bg-transparent py-24 md:py-36" data-testid="vision-section">
-    <div className="container-lc grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14">
-      <Reveal className="lg:col-span-7"><Placeholder label="Young people at Life Choices" src="/hero/hero1.webp" className="aspect-[1280/792] w-full rounded-[28px]" /></Reveal>
-      <div className="lg:col-span-5">
+  <section className="relative bg-transparent py-14 md:py-20" data-testid="vision-section">
+    <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
+      <Reveal className="lg:col-span-7"><Placeholder label="Young people at Life Choices" src="/hero/hero1.webp" className="aspect-[1280/792] w-full rounded-[28px] lg:aspect-auto lg:h-full lg:min-h-[420px]" /></Reveal>
+      <div className="flex flex-col justify-center lg:col-span-5">
         <Reveal><Eyebrow>Our Vision</Eyebrow></Reveal>
         <Reveal delay={0.06}><p className="text-lg text-ink/60">Life Choices is working towards a world where…</p></Reveal>
         <Reveal delay={0.12}>
-          <h2 className="font-display mt-4 text-3xl leading-[1.05] tracking-tight md:text-[3.4rem]">
+          <h2 className="font-display mt-4 text-3xl tracking-tight md:text-4xl lg:text-[2.6rem]">
             Every young person feels <em className="font-serif font-normal italic text-olive">safe and valued.</em> Every young person is free to thrive.
           </h2>
         </Reveal>
-        <Reveal delay={0.18}><p className="mt-8 max-w-2xl text-base text-ink/70 md:text-lg">We’re doing this through programmes that ignite the potential of young people by healing, uplifting and empowering lives.</p></Reveal>
+        <Reveal delay={0.18}><p className="mt-6 max-w-2xl text-base text-ink/70 md:text-lg">We’re doing this through programmes that ignite the potential of young people by healing, uplifting and empowering lives.</p></Reveal>
         <Reveal delay={0.24}>
-          <div className="mt-10 flex flex-wrap items-center gap-8 border-t border-ink/10 pt-8">
+          <div className="mt-8 flex flex-wrap items-center gap-8 border-t border-ink/10 pt-6">
             <div><div className="font-display text-3xl">Lansdowne</div><div className="text-sm text-ink/60">Our Cape Town campus</div></div>
             <div className="h-10 w-px bg-ink/15" />
             <div><div className="font-display text-3xl">Cape Flats</div><div className="text-sm text-ink/60">The communities we serve</div></div>
@@ -47,20 +47,18 @@ export const Vision = () => (
 );
 
 export const Approach = () => (
-  <section className="relative bg-lime/10 py-24 md:py-36" data-testid="approach-section">
-    <div className="container-lc grid grid-cols-1 gap-14 lg:grid-cols-12">
-      <div className="lg:col-span-5">
-        <div className="lg:sticky lg:top-32">
+  <section className="relative bg-lime/10 py-14 md:py-20" data-testid="approach-section">
+    <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
+      <div className="flex flex-col lg:col-span-5">
           <Reveal><Eyebrow>Our Approach</Eyebrow></Reveal>
-          <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">Five building blocks that help young people <em className="font-serif font-normal italic">thrive.</em></h2></Reveal>
+          <Reveal delay={0.06}><h2 className="font-display text-3xl tracking-tight md:text-5xl">Five building blocks that help young people <em className="font-serif font-normal italic text-olive">thrive.</em></h2></Reveal>
           <Reveal delay={0.12}><p className="mt-6 max-w-md text-base text-ink/70 md:text-lg">Our programmes operate across all these blocks so that young people can know themselves, access caring youth-friendly support, gain vital life skills, and get ready for their future.</p></Reveal>
-          <Reveal delay={0.18}><Placeholder label="Learners in a wellness session" src="/photos/wellness-spes-bona.webp" className="mt-10 aspect-[3/2] w-full rounded-[24px]" /></Reveal>
-        </div>
+          <Reveal delay={0.18} className="mt-8 flex-1"><Placeholder label="Learners in a wellness session" src="/photos/wellness-spes-bona.webp" className="aspect-[3/2] w-full rounded-[24px] lg:aspect-auto lg:h-full lg:min-h-[260px]" /></Reveal>
       </div>
       <ol className="lg:col-span-7">
         {APPROACH.map((a, k) => (
           <Reveal key={a.title} delay={k * 0.05}>
-            <li data-testid={`approach-item-${k}`} className="group border-t border-ink/10 py-8 md:py-10">
+            <li data-testid={`approach-item-${k}`} className="group border-t border-ink/10 py-6 md:py-7">
               <div>
                 <h3 className="font-display text-2xl tracking-tight transition-transform duration-500 group-hover:translate-x-2 md:text-3xl">{a.title}</h3>
                 <p className="mt-3 max-w-lg text-base text-ink/65">{a.text}</p>
@@ -119,28 +117,28 @@ export const Impact = () => (
 );
 
 export const Stories = () => (
-  <section className="bg-transparent py-24 md:py-36" data-testid="stories-section">
+  <section className="bg-transparent py-14 md:py-20" data-testid="stories-section">
     <div className="container-lc">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
           <Reveal><Eyebrow>Stories from the Field</Eyebrow></Reveal>
-          <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">Every person we meet has a story <em className="font-serif font-normal italic">worth sharing.</em></h2></Reveal>
+          <Reveal delay={0.06}><h2 className="font-display text-3xl tracking-tight md:text-5xl">Every person we meet has a story <em className="font-serif font-normal italic text-olive">worth sharing.</em></h2></Reveal>
         </div>
         <Reveal delay={0.1}><Link to="/stories" data-testid="stories-more-link" className="link-arrow group">Read more stories <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
       </div>
       <div className="mt-14">
         {STORIES.map((s, k) => (
           <Reveal key={s.slug} delay={k * 0.06}>
-            <Link to={`/stories/${s.slug}`} data-testid={`story-row-${k}`} className="group grid grid-cols-1 items-center gap-6 border-t border-ink/10 py-8 md:grid-cols-12 md:gap-10">
+            <Link to={`/stories/${s.slug}`} data-testid={`story-row-${k}`} className="group grid grid-cols-1 items-stretch gap-6 border-t border-ink/10 py-8 md:grid-cols-12 md:gap-10">
               <div className="overflow-hidden rounded-[20px] md:col-span-4">
-                <Placeholder label={s.title} src={s.img} className={`${s.ratio || "aspect-[3/2]"} w-full`} />
+                <Placeholder label={s.title} src={s.img} className="aspect-[3/2] w-full md:aspect-auto md:h-full md:min-h-[200px]" />
               </div>
-              <div className="md:col-span-7">
+              <div className="flex flex-col justify-center md:col-span-7">
                 <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-ink/60"><span className="font-semibold text-olive">{s.tag}</span><span className="h-1 w-1 rounded-full bg-ink/40" />{s.date}</div>
                 <h3 className="font-display mt-3 text-2xl tracking-tight md:text-4xl">{s.title}</h3>
                 <p className="mt-3 max-w-xl text-base text-ink/65">{s.text}</p>
               </div>
-              <ArrowUpRight className="hidden h-8 w-8 text-ink/40 transition-[transform,color] duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-ink md:col-span-1 md:block" />
+              <ArrowUpRight className="hidden h-8 w-8 self-center text-ink/40 transition-[transform,color] duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-ink md:col-span-1 md:block" />
             </Link>
           </Reveal>
         ))}
@@ -152,7 +150,7 @@ export const Stories = () => (
 export const Partners = () => {
   const row = [...PARTNERS, ...PARTNERS, ...PARTNERS, ...PARTNERS];
   return (
-    <section className="border-y border-ink/10 bg-lime/10 py-14 md:py-20" data-testid="partners-marquee">
+    <section className="border-y border-ink/10 bg-lime/10 py-12 md:py-16" data-testid="partners-marquee">
       <Reveal><p className="text-center text-xs uppercase tracking-[0.22em] text-ink/60">Proudly supported by our partners</p></Reveal>
       <div className="relative mt-10 overflow-hidden">
         <div className="marquee flex w-max items-center">
@@ -194,17 +192,17 @@ export const Banner = () => (
 );
 
 export const Involved = () => (
-  <section className="bg-transparent py-24 md:py-36" data-testid="involved-section">
-    <div className="container-lc grid grid-cols-1 gap-14 lg:grid-cols-12">
-      <div className="lg:col-span-5">
+  <section className="bg-transparent py-14 md:py-20" data-testid="involved-section">
+    <div className="container-lc grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-14">
+      <div className="flex flex-col lg:col-span-5">
         <Reveal><Eyebrow>Get Involved</Eyebrow></Reveal>
-        <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">There are many ways to <em className="font-serif font-normal italic">change the story.</em></h2></Reveal>
-        <Reveal delay={0.12}><Placeholder label="YouthCode Project graduates" src="/photos/academy-certificates.jpg" className="mt-10 aspect-[1100/811] w-full rounded-[24px]" /></Reveal>
+        <Reveal delay={0.06}><h2 className="font-display text-3xl tracking-tight md:text-5xl">There are many ways to <em className="font-serif font-normal italic text-olive">change the story.</em></h2></Reveal>
+        <Reveal delay={0.12} className="mt-8 flex-1"><Placeholder label="Learners in a Life Choices session" src="/photos/get-involved.webp" className="aspect-[3/2] w-full rounded-[24px] lg:aspect-auto lg:h-full lg:min-h-[260px]" /></Reveal>
       </div>
       <div className="lg:col-span-7">
         {INVOLVED.map((g, k) => (
           <Reveal key={g.title} delay={k * 0.07}>
-            <Link to={g.href} data-testid={`involved-${g.title.toLowerCase()}`} className="group flex items-start gap-6 border-t border-ink/10 py-9 md:gap-10">
+            <Link to={g.href} data-testid={`involved-${g.title.toLowerCase()}`} className="group flex items-start gap-6 border-t border-ink/10 py-7 md:gap-10">
               <div className="flex-1">
                 <h3 className="font-display text-3xl tracking-tight md:text-5xl">{g.title}</h3>
                 <p className="mt-3 text-base text-ink/65">{g.text}</p>

@@ -24,7 +24,7 @@ export const CardPreview = ({ f, flip }) => {
         <div className="card-face card-back absolute inset-0 overflow-hidden rounded-[24px] bg-gradient-to-br from-ink to-moss text-white">
           <div className="mt-8 h-11 w-full bg-black/70" />
           <div className="mx-6 mt-6 flex items-center justify-end rounded-md bg-white/90 px-4 py-2 font-display text-ink">{f.cvc || "•••"}</div>
-          <p className="mx-6 mt-6 text-xs text-white/60">Demo card for Life Choices. No real payment is processed.</p>
+          <p className="mx-6 mt-6 text-xs text-white/60">Life Choices supporter card.</p>
         </div>
       </motion.div>
     </div>

@@ -1,24 +1,18 @@
-import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { INTERVENTIONS } from "../../data/site";
 import { Reveal, Placeholder } from "./Motion";
 import { Eyebrow } from "./Sections";
 
-const Row = ({ it }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [24, -24]);
-  return (
-    <div ref={ref} data-testid={`intervention-${it.slug}`} className="grid grid-cols-1 items-center gap-8 border-t border-ink/10 py-14 md:py-20 lg:grid-cols-12 lg:gap-16">
-      <Reveal className="lg:order-2 lg:col-span-6">
-        <motion.div style={{ y }} className="relative overflow-hidden rounded-[28px]">
-          <Placeholder label={`${it.name} programme photo`} src={it.img} className={`${it.ratio || "aspect-[1100/811]"} w-full`} />
-          <span className="absolute left-5 top-5 rounded-full bg-lime px-3.5 py-1.5 text-xs font-semibold text-ink">{it.pillar}</span>
-        </motion.div>
-      </Reveal>
-      <div className="text-left lg:order-1 lg:col-span-6">
+const Row = ({ it }) => (
+  <div data-testid={`intervention-${it.slug}`} className="grid grid-cols-1 items-stretch gap-8 border-t border-ink/10 py-10 md:py-14 lg:grid-cols-12 lg:gap-14">
+    <Reveal className="lg:order-2 lg:col-span-6">
+      <div className="relative h-full overflow-hidden rounded-[28px]">
+        <Placeholder label={`${it.name} programme photo`} src={it.img} className="aspect-[4/3] w-full lg:aspect-auto lg:h-full lg:min-h-[380px]" />
+        <span className="absolute left-5 top-5 rounded-full bg-lime px-3.5 py-1.5 text-xs font-semibold text-ink">{it.pillar}</span>
+      </div>
+    </Reveal>
+    <div className="flex flex-col justify-center text-left lg:order-1 lg:col-span-6">
         <Reveal delay={0.06}>
           <Link to={`/interventions/${it.slug}`} className="group block" data-testid={`intervention-link-${it.slug}`}>
             <h3 className="programme-name text-[2.6rem] sm:text-6xl lg:text-7xl">
@@ -33,20 +27,23 @@ const Row = ({ it }) => {
             {it.tags.map((t) => <li key={t} className="rounded-full border border-ink/15 px-3.5 py-1.5 text-xs text-ink/75">{t}</li>)}
           </ul>
         </Reveal>
-      </div>
     </div>
-  );
-};
+  </div>
+);
 
 export const Interventions = () => (
-  <section className="relative bg-transparent py-24 text-ink md:py-36" data-testid="interventions-section">
+  <section className="relative bg-transparent py-14 text-ink md:py-20" data-testid="interventions-section">
     <div className="container-lc relative z-10">
-      <div className="flex flex-col gap-6 pb-10 md:flex-row md:items-end md:justify-between md:pb-14">
-        <div className="max-w-2xl">
+      <div className="grid grid-cols-1 items-stretch gap-8 pb-10 lg:grid-cols-12 lg:gap-14 md:pb-14">
+        <div className="flex flex-col justify-center lg:col-span-6">
           <Reveal><Eyebrow>Our Interventions</Eyebrow></Reveal>
-          <Reveal delay={0.06}><h2 className="font-display text-3xl leading-[1.05] tracking-tight md:text-5xl">Programmes that meet young people <em className="font-serif font-normal italic text-olive">where they are.</em></h2></Reveal>
+          <Reveal delay={0.06}><h2 className="font-display text-3xl tracking-tight md:text-5xl">Programmes that meet young people <em className="font-serif font-normal italic text-olive">where they are.</em></h2></Reveal>
+          <Reveal delay={0.1}><p className="mt-6 max-w-lg text-base text-ink/70 md:text-lg">Four connected programmes support young people at home, in school, in their health and on the road to work.</p></Reveal>
+          <Reveal delay={0.14}><Link to="/interventions" data-testid="interventions-all-link" className="link-arrow group mt-8 self-start text-ink">View all programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
         </div>
-        <Reveal delay={0.1}><Link to="/interventions" data-testid="interventions-all-link" className="link-arrow group text-ink">View all programmes <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
+        <Reveal className="lg:col-span-6">
+          <Placeholder label="Young people learning on laptops at Life Choices" src="/photos/interventions.webp" className="aspect-[4/3] w-full rounded-[28px] lg:aspect-auto lg:h-full lg:min-h-[360px]" />
+        </Reveal>
       </div>
       {INTERVENTIONS.map((it) => <Row key={it.slug} it={it} />)}
     </div>

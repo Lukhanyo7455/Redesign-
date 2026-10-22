@@ -17,7 +17,7 @@ module.exports = {
       colors: {
         ink: '#12160F',
         moss: '#2B3A1E',
-        olive: '#4A6130',
+        olive: '#ABCC37',
         bone: '#FFFFFF',
         sand: '#FFFFFF',
         lime: '#ABCC37',

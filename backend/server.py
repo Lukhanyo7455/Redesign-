@@ -64,7 +64,7 @@ async def root():
 async def create_donation(body: DonationIn):
     # Demo gateway: card ending 0002 simulates a decline
     if body.card_last4 == "0002":
-        raise HTTPException(status_code=402, detail="Card declined (demo). Try another card number.")
+        raise HTTPException(status_code=402, detail="Card declined. Try another card number.")
     ref = "LC21-" + "".join(random.choices(string.ascii_uppercase + string.digits, k=6))
     donation = Donation(**body.model_dump(), reference=ref, status="succeeded")
     await db.donations.insert_one(donation.model_dump())
