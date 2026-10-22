@@ -36,10 +36,9 @@ export const Vision = () => (
         </Reveal>
         <Reveal delay={0.18}><p className="mt-6 max-w-2xl text-base text-ink/70 md:text-lg">We’re doing this through programmes that ignite the potential of young people by healing, uplifting and empowering lives.</p></Reveal>
         <Reveal delay={0.24}>
-          <div className="mt-8 flex flex-wrap items-center gap-8 border-t border-ink/10 pt-6">
-            <div><div className="font-display text-3xl">Lansdowne</div><div className="text-sm text-ink/60">Our Cape Town campus</div></div>
-            <div className="h-10 w-px bg-ink/15" />
-            <div><div className="font-display text-3xl">Cape Flats</div><div className="text-sm text-ink/60">The communities we serve</div></div>
+          <div className="mt-8 grid grid-cols-2 gap-6 border-t border-ink/10 pt-6">
+            <div><div className="font-display text-2xl md:text-3xl">Lansdowne</div><div className="text-sm text-ink/60">Our Cape Town campus</div></div>
+            <div className="border-l border-ink/15 pl-6"><div className="font-display text-2xl md:text-3xl">Cape Flats</div><div className="text-sm text-ink/60">The communities we serve</div></div>
           </div>
         </Reveal>
       </div>
@@ -125,7 +124,7 @@ export const Stories = () => (
           <Reveal><Eyebrow>Stories from the Field</Eyebrow></Reveal>
           <Reveal delay={0.06}><h2 className="font-display text-3xl tracking-tight md:text-5xl">Every person we meet has a story <em className="font-serif font-normal italic text-olive">worth sharing.</em></h2></Reveal>
         </div>
-        <Reveal delay={0.1}><Link to="/stories" data-testid="stories-more-link" className="link-arrow group">Read more stories <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
+        <Reveal delay={0.1}><Link to="/stories" data-testid="stories-more-link" className="link-arrow group shrink-0 whitespace-nowrap">Read more stories <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link></Reveal>
       </div>
       <div className="mt-14">
         {STORIES.map((s, k) => (

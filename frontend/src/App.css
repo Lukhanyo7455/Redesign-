@@ -50,9 +50,9 @@ body::before {
 .map-frame { filter: grayscale(0.4) contrast(1.05); transition: filter 0.6s ease; }
 .map-frame:hover { filter: none; }
 .banner-frame { aspect-ratio: var(--r); }
-@media (min-width: 768px) { .banner-frame { min-height: 560px; } }
+@media (min-width: 1024px) { .banner-frame { min-height: 560px; } }
 .banner-frame-short { aspect-ratio: var(--r); }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .banner-frame-short { aspect-ratio: auto; height: min(calc(100vw / var(--r)), 76vh); min-height: 520px; }
 }
 .impact-figure .text-olive { color: #abcc37; }

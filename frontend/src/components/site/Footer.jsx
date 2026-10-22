@@ -14,8 +14,8 @@ const Col = ({ title, items }) => (
 
 export const Footer = () => (
   <footer className="bg-ink text-bone" data-testid="site-footer">
-    <div className="container-lc grid grid-cols-1 gap-x-10 gap-y-12 pb-14 pt-20 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
-      <div>
+    <div className="container-lc grid grid-cols-2 gap-x-6 gap-y-12 pb-14 pt-16 md:gap-x-10 md:pt-20 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div className="col-span-2 lg:col-span-1">
         <Logo className="h-9" />
         <p className="mt-5 max-w-xs text-sm text-bone/70">An innovative youth development organisation based in Cape Town, investing in young people so they can reach their potential.</p>
         <div className="mt-6 flex gap-2">
@@ -26,7 +26,7 @@ export const Footer = () => (
       </div>
       <div><Col title="Organisation" items={FOOTER_ORG} /></div>
       <div><Col title="Our Work" items={INTERVENTIONS.map((i) => [i.name, `/interventions/${i.slug}`])} /></div>
-      <div className="space-y-5 text-sm">
+      <div className="col-span-2 space-y-5 text-sm lg:col-span-1">
         <p className="eyebrow !mb-5 text-bone/60">Visit / Contact</p>
         <div><p className="text-xs uppercase tracking-widest text-lime">Visit</p><p className="mt-1 text-bone/85">314 Imam Haron Road, Lansdowne, Cape Town, South Africa</p></div>
         <div><p className="text-xs uppercase tracking-widest text-lime">Email</p><a href="mailto:info@lifechoices.co.za" className="mt-1 block text-bone/85">info@lifechoices.co.za</a></div>

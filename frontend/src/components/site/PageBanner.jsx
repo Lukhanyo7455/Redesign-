@@ -30,10 +30,10 @@ const FullBanner = ({ img, eyebrow, lines, text, testId, ratio = 1.5, short, pos
         style={short ? { objectPosition: pos } : undefined}
         initial={{ scale: 1.06 }} animate={{ scale: 1 }} transition={{ duration: 1.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
       />
-      <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/85 via-ink/45 to-transparent md:block" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink to-transparent md:h-32 md:from-ink/60" />
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/85 via-ink/45 to-transparent lg:block" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink to-transparent lg:h-32 lg:from-ink/60" />
     </div>
-    <div className="container-lc relative pb-12 pt-2 md:absolute md:inset-0 md:flex md:items-center md:pb-0 md:pt-24">
+    <div className="container-lc relative pb-12 pt-4 md:pb-16 lg:absolute lg:inset-0 lg:flex lg:items-center lg:pb-0 lg:pt-24">
       <div className="max-w-3xl text-white">
         <Reveal delay={0.9}><p className="eyebrow mb-5 text-lime">{eyebrow}</p></Reveal>
         <h1 className="font-display text-4xl tracking-tight md:text-6xl lg:text-[4.2rem]">

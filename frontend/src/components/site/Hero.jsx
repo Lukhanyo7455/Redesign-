@@ -30,9 +30,9 @@ export const Hero = () => {
             <p data-testid="hero-description" className="mt-8 max-w-xl text-base text-ink/70 md:text-lg">
               We create pathways for young people to discover their potential, develop practical skills and shape a future full of possibility.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/get-involved" data-testid="hero-support-btn" className="btn-lime group">Support our work <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link>
-              <Link to="/interventions" data-testid="hero-programmes-btn" className="btn-ghost btn-ghost-dark">Explore our programmes</Link>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link to="/get-involved" data-testid="hero-support-btn" className="btn-lime group justify-center">Support our work <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link>
+              <Link to="/interventions" data-testid="hero-programmes-btn" className="btn-ghost btn-ghost-dark justify-center">Explore our programmes</Link>
             </div>
           </motion.div>
         </div>
@@ -47,8 +47,8 @@ export const Hero = () => {
           >
             <img src={IMG} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-70 blur-2xl" />
             <img src={IMG} alt="Young people at Life Choices" data-testid="hero-image" className="absolute inset-0 h-full w-full object-contain" />
-            <div className="absolute bottom-5 left-5">
-              <span className="rounded-full bg-white/90 px-4 py-2 font-serif text-lg italic text-ink">Healing, uplifting &amp; empowering.</span>
+            <div className="absolute bottom-3 left-3 md:bottom-5 md:left-5">
+              <span className="whitespace-nowrap rounded-full bg-white/90 px-3 py-1.5 font-serif text-sm italic text-ink md:px-4 md:py-2 md:text-lg">Healing, uplifting &amp; empowering.</span>
             </div>
           </motion.div>
         </div>
