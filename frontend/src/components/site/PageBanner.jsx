@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MaskLines, Reveal } from "./Motion";
+import { INTRO_S } from "./Intro";
 
 const SplitBanner = ({ img, eyebrow, lines, text, testId, ratio, children }) => (
   <section data-testid={testId} className="relative overflow-hidden bg-ink pt-24 md:pt-28">
@@ -28,18 +29,18 @@ const FullBanner = ({ img, eyebrow, lines, text, testId, ratio = 1.5, short, pos
       <motion.img
         src={img} alt="" data-testid={`${testId}-image`} className="absolute inset-0 h-full w-full object-cover"
         style={short ? { objectPosition: pos } : undefined}
-        initial={{ scale: 1.06 }} animate={{ scale: 1 }} transition={{ duration: 1.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ scale: 1.06 }} animate={{ scale: 1 }} transition={{ duration: 1.6, delay: INTRO_S - 0.4, ease: [0.22, 1, 0.36, 1] }}
       />
       <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/85 via-ink/45 to-transparent lg:block" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink to-transparent lg:h-32 lg:from-ink/60" />
     </div>
     <div className="container-lc relative pb-12 pt-4 md:pb-16 lg:absolute lg:inset-0 lg:flex lg:items-center lg:pb-0 lg:pt-24">
       <div className="max-w-3xl text-white">
-        <Reveal delay={0.9}><p className="eyebrow mb-5 text-lime">{eyebrow}</p></Reveal>
+        <Reveal delay={INTRO_S - 0.1}><p className="eyebrow mb-5 text-lime">{eyebrow}</p></Reveal>
         <h1 className="font-display text-4xl tracking-tight md:text-6xl lg:text-[4.2rem]">
-          <MaskLines delay={0.95} lines={lines} />
+          <MaskLines delay={INTRO_S - 0.05} lines={lines} />
         </h1>
-        {text && <Reveal delay={1.15}><p className="mt-6 max-w-xl text-base text-white/85 md:text-lg">{text}</p></Reveal>}
+        {text && <Reveal delay={INTRO_S + 0.15}><p className="mt-6 max-w-xl text-base text-white/85 md:text-lg">{text}</p></Reveal>}
         {children}
       </div>
     </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import { X, PartyPopper } from "lucide-react";
+import { INTRO_S } from "./Intro";
 
 const COLORS = ["#ABCC37", "#4A6130", "#F5C542", "#FFFFFF", "#2B3A1E"];
 
@@ -25,7 +26,7 @@ export const Celebration = () => {
     return () => window.removeEventListener("lc21-open", openIt);
   }, []);
   useEffect(() => {
-    const t = setTimeout(() => { setOpen(true); burst(); }, 3000);
+    const t = setTimeout(() => { setOpen(true); burst(); }, (INTRO_S + 2) * 1000);
     return () => clearTimeout(t);
   }, []);
 

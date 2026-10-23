@@ -2,10 +2,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { MaskLines } from "./Motion";
 
+export const INTRO_S = 5;
+
 export const Intro = () => {
   const [show, setShow] = useState(true);
   useEffect(() => {
-    const t = setTimeout(() => setShow(false), 1000);
+    const t = setTimeout(() => setShow(false), INTRO_S * 1000);
     return () => clearTimeout(t);
   }, []);
   return (
