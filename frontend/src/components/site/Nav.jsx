@@ -65,8 +65,8 @@ export const Nav = () => {
   return (
     <motion.header data-testid="site-nav" animate={{ y: hidden && !open ? "-110%" : "0%" }} transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-white shadow-[0_6px_20px_-12px_rgba(18,22,15,0.35)] lg:border-0 lg:bg-transparent lg:px-6 lg:pt-4 lg:shadow-none">
-      <div className="mx-auto flex h-[60px] max-w-[1320px] items-center justify-between px-3 lg:h-auto lg:rounded-full lg:border lg:border-ink/10 lg:bg-white/80 lg:py-2 lg:pl-3 lg:pr-2 lg:backdrop-blur-xl">
-        <Link to="/" data-testid="nav-logo" className="rounded-full bg-ink px-3 py-1.5 lg:px-4 lg:py-2"><Logo className="h-5 md:h-6 lg:h-7" /></Link>
+      <div className="mx-auto flex h-[60px] max-w-[1320px] items-center justify-between px-3 lg:h-auto lg:rounded-full lg:border lg:border-ink/10 lg:bg-white/95 lg:py-2 lg:pl-3 lg:pr-2 lg:backdrop-blur-xl">
+        <Link to="/" data-testid="nav-logo" className="flex items-center px-1 lg:px-3"><Logo dark className="h-8 lg:h-9" /></Link>
         <nav className="isolate hidden items-center gap-1 lg:flex">
           {NAV.map((n) => <NavItem key={n.label} n={n} />)}
         </nav>

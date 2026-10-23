@@ -16,7 +16,7 @@ export const Footer = () => (
   <footer className="bg-ink text-bone" data-testid="site-footer">
     <div className="container-lc grid grid-cols-2 gap-x-6 gap-y-12 pb-14 pt-16 md:gap-x-10 md:pt-20 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
       <div className="col-span-2 lg:col-span-1">
-        <Logo className="h-9" />
+        <Logo className="h-12" />
         <p className="mt-5 max-w-xs text-sm text-bone/70">An innovative youth development organisation based in Cape Town, investing in young people so they can reach their potential.</p>
         <div className="mt-6 flex gap-2">
           {[Linkedin, Facebook, Instagram].map((I, k) => (
@@ -34,18 +34,18 @@ export const Footer = () => (
       </div>
     </div>
     <div className="container-lc overflow-hidden border-t border-bone/15 py-10" data-testid="footer-wordmark">
-      <svg viewBox="0 0 429 99" className="footer-logo-mark mx-auto block w-full max-w-[760px]" role="img" aria-label="Life Choices">
+      <svg viewBox="-12 -12 1586 523" className="footer-logo-mark mx-auto block w-full max-w-[680px]" role="img" aria-label="Life Choices">
         <defs>
-          <filter id="lc-outline" x="-5%" y="-5%" width="110%" height="110%">
-            <feMorphology in="SourceAlpha" operator="dilate" radius="1.2" result="d" />
+          <filter id="lc-outline" x="-3%" y="-5%" width="106%" height="112%">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="3.5" result="d" />
             <feComposite in="d" in2="SourceAlpha" operator="out" result="o" />
             <feFlood floodColor="#ABCC37" />
             <feComposite in2="o" operator="in" />
           </filter>
-          <clipPath id="lc-fill"><rect className="footer-logo-fill" x="0" y="0" width="429" height="99" /></clipPath>
+          <clipPath id="lc-fill"><rect className="footer-logo-fill" x="0" y="0" width="1562" height="499" /></clipPath>
         </defs>
-        <image href="/brand/logo.png" width="429" height="99" filter="url(#lc-outline)" />
-        <image href="/brand/logo.png" width="429" height="99" clipPath="url(#lc-fill)" />
+        <image href="/brand/logo-light.png" width="1562" height="499" filter="url(#lc-outline)" />
+        <image href="/brand/logo-light.png" width="1562" height="499" clipPath="url(#lc-fill)" />
       </svg>
     </div>
     <div className="container-lc">

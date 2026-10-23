@@ -8,6 +8,6 @@ export const Mark = ({ className = "h-8 w-8" }) => (
   </svg>
 );
 
-export const Logo = ({ className = "h-9" }) => (
-  <img src="/brand/logo.png" alt="Life Choices" className={`${className} w-auto`} draggable="false" />
+export const Logo = ({ className = "h-9", dark }) => (
+  <img src={dark ? "/brand/logo-dark.png" : "/brand/logo-light.png"} alt="Life Choices" className={`${className} w-auto`} draggable="false" />
 );

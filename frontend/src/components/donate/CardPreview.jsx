@@ -11,7 +11,7 @@ export const CardPreview = ({ f, flip }) => {
         <div className="card-face grain absolute inset-0 overflow-hidden rounded-[24px] bg-gradient-to-br from-moss via-ink to-ink p-6 text-white">
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-lime/30 blur-3xl" />
           <div className="relative flex items-start justify-between">
-            <img src="/brand/logo.png" alt="" className="h-7" />
+            <img src="/brand/logo-light.png" alt="" className="h-8" />
             <span className="text-xs font-bold tracking-[0.2em] text-lime">{brand(n)}</span>
           </div>
           <div className="card-chip relative mt-6 h-9 w-12 rounded-md" />

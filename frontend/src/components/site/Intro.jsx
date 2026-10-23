@@ -21,7 +21,7 @@ export const Intro = () => {
           transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
         >
           <motion.img
-            src="/brand/logo.png" alt="Life Choices" className="h-12 md:h-16"
+            src="/brand/logo-light.png" alt="Life Choices" className="h-14 md:h-20"
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
           />
           <h1 className="font-display mt-8 px-6 text-center text-4xl sm:text-6xl lg:text-7xl tracking-tight">
